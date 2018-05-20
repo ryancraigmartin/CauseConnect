@@ -1,4 +1,8 @@
-# Angular
+# CauseConnect
+
+Developed by [Brian Jaimes](https://github.com/B-riJ), [Kat Alderman](https://github.com/katalderman) and [Ryan Craig Martin](https://github.com/ryanmartin) in two weeks for the final project of the April-June 2018 Cohort at Ironhack, Miami.
+
+## Angular
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 6.0.1.
 
