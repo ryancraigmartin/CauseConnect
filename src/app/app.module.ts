@@ -8,19 +8,44 @@ import { AppComponent } from './app.component';
 import { HomeComponent } from './home/home.component';
 import { LoginComponent } from './login/login.component';
 import { SignupComponent } from './signup/signup.component';
+import { ProfileComponent } from './profile/profile.component';
+import { NotFoundComponent } from './not-found/not-found.component';
 
 const routes: Routes = [
-  { path: '', redirectTo: 'index', pathMatch: 'full' },
-  { path: 'home',  component: HomeComponent },
-  { path: 'login',  component: LoginComponent },
-  { path: 'signup', component: SignupComponent }
+  {
+    path: '',
+    redirectTo: 'home',
+    pathMatch: 'full'
+  },
+  { // Homepage route.
+    path: 'home',
+    component: HomeComponent
+  },
+  { // Login route.
+    path: 'login',
+    component: LoginComponent
+  },
+  { // Signup route.
+    path: 'signup',
+    component: SignupComponent
+  },
+  { // User Profile route.
+    path: 'profile/:username',
+    component: ProfileComponent
+  },
+  { // 404 route.
+    path: '**', // Wildcard. Captures anything that isn't a valid route.
+    component: NotFoundComponent
+  }
 ];
 @NgModule({
   declarations: [
     AppComponent,
     HomeComponent,
     LoginComponent,
-    SignupComponent
+    SignupComponent,
+    ProfileComponent,
+    NotFoundComponent
   ],
   imports: [
     BrowserModule,
