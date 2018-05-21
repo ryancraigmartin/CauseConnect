@@ -23,11 +23,18 @@
     "@angular/router": "^6.0.0",
     "bootstrap": "^4.1.1",
     "core-js": "^2.5.4",
+<<<<<<< HEAD
     "hoek": "^5.0.3",
     "jquery": "^3.3.1",
     "popper.js": "^1.14.3",
     "rxjs": "^6.1.0",
     "tunnel-agent": "^0.6.0",
+=======
+    "jquery": "^1.12.4",
+    "popper.js": "^1.14.3",
+    "rxjs": "^6.1.0",
+    "rxjs-compat": "^6.1.0",
+>>>>>>> 6bf9df2389ba29dfef5f241a766aa23cc9850229
     "zone.js": "^0.8.26"
   },
   "devDependencies": {
