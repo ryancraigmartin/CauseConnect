@@ -11,6 +11,7 @@
   },
   "private": true,
   "dependencies": {
+    "6": "0.0.1",
     "@angular/animations": "^6.0.0",
     "@angular/common": "^6.0.0",
     "@angular/compiler": "^6.0.0",
@@ -22,9 +23,11 @@
     "@angular/router": "^6.0.0",
     "bootstrap": "^4.1.1",
     "core-js": "^2.5.4",
-    "jquery": "^1.9.1",
+    "hoek": "^5.0.3",
+    "jquery": "^3.3.1",
     "popper.js": "^1.14.3",
-    "rxjs": "^6.0.0",
+    "rxjs": "^6.1.0",
+    "tunnel-agent": "^0.6.0",
     "zone.js": "^0.8.26"
   },
   "devDependencies": {
@@ -38,7 +41,7 @@
     "codelyzer": "~4.2.1",
     "jasmine-core": "~2.99.1",
     "jasmine-spec-reporter": "~4.2.1",
-    "karma": "~1.7.1",
+    "karma": "^2.0.2",
     "karma-chrome-launcher": "~2.2.0",
     "karma-coverage-istanbul-reporter": "~1.4.2",
     "karma-jasmine": "~1.1.1",
