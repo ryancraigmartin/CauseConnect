@@ -10,6 +10,7 @@ import { LoginComponent } from './login/login.component';
 import { SignupComponent } from './signup/signup.component';
 import { ProfileComponent } from './profile/profile.component';
 import { NotFoundComponent } from './not-found/not-found.component';
+import { AuthService } from './services/auth.service';
 
 const routes: Routes = [
   {
@@ -49,10 +50,11 @@ const routes: Routes = [
   ],
   imports: [
     BrowserModule,
+    HttpModule,
     FormsModule,
     RouterModule.forRoot(routes)
   ],
-  providers: [], // Services go here.
+  providers: [AuthService], // Services go here.
   bootstrap: [AppComponent]
 })
 export class AppModule { }
