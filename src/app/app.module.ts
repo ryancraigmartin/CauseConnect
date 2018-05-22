@@ -3,31 +3,64 @@ import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { RouterModule, Routes } from '@angular/router';
 import { HttpModule } from '@angular/http';
+import { AngularFontAwesomeModule } from 'angular-font-awesome';
 
 import { AppComponent } from './app.component';
 import { HomeComponent } from './home/home.component';
 import { LoginComponent } from './login/login.component';
 import { SignupComponent } from './signup/signup.component';
+import { ProfileComponent } from './profile/profile.component';
+import { NotFoundComponent } from './not-found/not-found.component';
+import { AuthService } from './services/auth.service';
+import { NavbarComponent } from './navbar/navbar.component';
+import { FooterComponent } from './footer/footer.component';
 
 const routes: Routes = [
-  { path: '', redirectTo: 'index', pathMatch: 'full' },
-  { path: 'home',  component: HomeComponent },
-  { path: 'login',  component: LoginComponent },
-  { path: 'signup', component: SignupComponent }
+  {
+    path: '',
+    redirectTo: 'home',
+    pathMatch: 'full'
+  },
+  { // Homepage route.
+    path: 'home',
+    component: HomeComponent
+  },
+  { // Login route.
+    path: 'login',
+    component: LoginComponent
+  },
+  { // Signup route.
+    path: 'signup',
+    component: SignupComponent
+  },
+  { // User Profile route.
+    path: 'profile/:username',
+    component: ProfileComponent
+  },
+  { // 404 route.
+    path: '**', // Wildcard. Captures anything that isn't a valid route.
+    component: NotFoundComponent
+  }
 ];
 @NgModule({
   declarations: [
     AppComponent,
     HomeComponent,
     LoginComponent,
-    SignupComponent
+    SignupComponent,
+    ProfileComponent,
+    NotFoundComponent,
+    NavbarComponent,
+    FooterComponent
   ],
   imports: [
+    AngularFontAwesomeModule,
     BrowserModule,
+    HttpModule,
     FormsModule,
     RouterModule.forRoot(routes)
   ],
-  providers: [], // Services go here.
+  providers: [AuthService], // Services go here.
   bootstrap: [AppComponent]
 })
 export class AppModule { }
