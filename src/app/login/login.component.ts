@@ -34,6 +34,7 @@ import 'rxjs/add/operator/toPromise';
     this.myService.login(this.formInfo)
       .subscribe(
 <<<<<<< HEAD
+<<<<<<< HEAD
         (user) => { this.user = user;
           console.log(this.user);
         },
@@ -41,7 +42,6 @@ import 'rxjs/add/operator/toPromise';
 =======
         (user) =>  this.user = JSON.parse(this.myService.currentUser._body),
           (err) => this.error = err
->>>>>>> fc45f00110770e6c7e3094c6d9be94b65903b062
       );
   }
 
