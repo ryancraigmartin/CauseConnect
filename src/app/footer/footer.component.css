@@ -49,8 +49,8 @@
 
 #myFooter .social-networks{
     text-align: center;
-    padding-top: 30px;
-    padding-bottom: 5px;
+    padding-top: 0px;
+    padding-bottom: 15px;
 }
 
 #myFooter .social-networks a{
