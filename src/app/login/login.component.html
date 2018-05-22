@@ -4,7 +4,7 @@
   <div>
     <div class="form-group">
       <h4 for="username">Username: </h4>
-      <input type="text" class="form-control"  [(ngModel)]="formInfo.username" name="username" id="login_username" placeholder="Username">
+      <input type="text" class="form-control" [(ngModel)]="formInfo.username" name="username" id="login_username" placeholder="Username">
     </div>
     <div class="form-group">
       <h4 for="exampleInputPassword1">Password: </h4>
@@ -16,13 +16,16 @@
 </form>
 <p class="error"> {{ error }} </p>
 
-<div *ngIf="user">
-  <h2> You are now logged in as {{ user.username }}!! </h2>
-  <p> Here's the user object </p>
-  <pre> {{ user | json }} </pre>
 
 <a [routerLink]="['/login']"> login </a>
 <a [routerLink]="['/signup']"> signup </a>
 <a [routerLink]="['/profile']"> profile </a>
 <a [routerLink]="['/']"> home </a>
+
+
+<div *ngIf="user">
+  <h2> You are now logged in as {{ user.username }}!! </h2>
+  <p> Here's the user object </p>
+  <pre> {{ user | json }} </pre>
+</div>
 
