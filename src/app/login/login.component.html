@@ -10,12 +10,13 @@
       <h4 for="exampleInputPassword1">Password: </h4>
       <input type="password" class="form-control" [(ngModel)]="formInfo.password" name="password" id="login_password" placeholder="Password">
     </div>
-    <button type="submit" (click)="login()" class="btn btn-success">Log In</button>
+    <button (click)="login()" class="btn btn-success">Log In</button>
     <button type="submit" class="btn btn-primary">Sign Up</button>
   </div>
 </form>
 <p class="error"> {{ error }} </p>
 
+<<<<<<< HEAD
 =======
 	<!-- <div class="logincontainer">
 		<form>
@@ -46,17 +47,24 @@
 		<pre> {{ user | json }} </pre> -->
 >>>>>>> f31fa22929f3e599a3e797f0226a4866a3645953
 
+=======
+>>>>>>> fc45f00110770e6c7e3094c6d9be94b65903b062
 <a [routerLink]="['/login']"> login </a>
 <a [routerLink]="['/signup']"> signup </a>
 <a [routerLink]="['/profile']"> profile </a>
 <a [routerLink]="['/']"> home </a>
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 
+=======
+Hi
+>>>>>>> fc45f00110770e6c7e3094c6d9be94b65903b062
 <div *ngIf="user">
   <h2> You are now logged in as {{ user.username }}!! </h2>
   <p> Here's the user object </p>
   <pre> {{ user | json }} </pre>
+<<<<<<< HEAD
 </div>
 
 =======
@@ -101,3 +109,7 @@
 
 
 >>>>>>> f31fa22929f3e599a3e797f0226a4866a3645953
+=======
+  <button (click)="getPrivateData()"> getPrivateData</button>
+</div>
+>>>>>>> fc45f00110770e6c7e3094c6d9be94b65903b062

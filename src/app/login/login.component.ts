@@ -1,9 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { Observable } from 'rxjs/Observable';
-import { AuthService } from '../services/auth.service';
-import { ActivatedRoute } from '@angular/router';
-// import { HttpModule } from '@angular/http';
-// import { Http, Response } from '@angular/http';
+import { AuthService } from '../services/auth.service'; // Session Service
+import { Router } from '@angular/router';
+import 'rxjs/add/operator/toPromise';
+
 
 @Component({
   selector: 'app-login',
@@ -13,29 +13,44 @@ import { ActivatedRoute } from '@angular/router';
 
   export class LoginComponent implements OnInit {
 
-    constructor(private myService: AuthService) {}
-
     formInfo: any = {
       username: '',
-      password: ''
+      password: '',
+      email: ''
     };
 
   user: any;
   error: any;
+  privateData: any;
 
-  login() {
-    console.log(this.formInfo);
-    this.myService.login(this.formInfo)
-      .subscribe(
-        (user) => { this.user = user;
-          console.log(this.user);
-        },
-        (err) => this.error = err
-      );
-  }
+  constructor (private myService: AuthService, private myRouter: Router) {}
 
   ngOnInit() {
 
   }
+
+  login() {
+    // console.log(this.formInfo);
+    this.myService.login(this.formInfo)
+      .subscribe(
+<<<<<<< HEAD
+        (user) => { this.user = user;
+          console.log(this.user);
+        },
+        (err) => this.error = err
+=======
+        (user) =>  this.user = JSON.parse(this.myService.currentUser._body),
+          (err) => this.error = err
+>>>>>>> fc45f00110770e6c7e3094c6d9be94b65903b062
+      );
+  }
+
+  getPrivateData() {
+    this.myService.getPrivateData()
+    .subscribe(() => console.log("====================", JSON.parse(this.myService.currentUser._body).username),
+    err => console.log(err))
+  }
+
+
 
   }
