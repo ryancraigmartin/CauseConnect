@@ -1,22 +1,29 @@
 <p>Login Route works!</p>
 <h2> Login to CauseConnect </h2>
-<form action="/login" method="POST">
+<form>
   <div>
     <div class="form-group">
       <h4 for="username">Username: </h4>
-      <input type="text" class="form-control" name="username" id="login_email" placeholder="Email">
+      <input type="text" class="form-control" [(ngModel)]="formInfo.username" name="username" id="login_email" placeholder="Email">
       <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
     </div>
     <div class="form-group">
       <h4 for="exampleInputPassword1">Password: </h4>
-      <input type="password" class="form-control" name="password" id="login_password" placeholder="Password">
+      <input type="password" class="form-control" [(ngModel)]="formInfo.password" name="password" id="login_password" placeholder="Password">
     </div>
-    <button type="submit" class="btn btn-success">Log In</button>
-    <button type="submit" class="btn btn-primary">Sign Up</button>
+    <button type="submit" (click)="login" class="btn btn-success">Log In</button>
+    <!-- <button type="submit" class="btn btn-primary">Sign Up</button> -->
   </div>
 </form>
+<p class="error"> {{ error }} </p>
+
+<div *ngIf="user">
+  <h2> You are now logged in as {{ user.username }}!! </h2>
+  <p> Here's the user object </p>
+  <pre> {{ user | json }} </pre>
 
 <a [routerLink]="['/login']"> login </a>
 <a [routerLink]="['/signup']"> signup </a>
 <a [routerLink]="['/profile']"> profile </a>
 <a [routerLink]="['/']"> home </a>
+

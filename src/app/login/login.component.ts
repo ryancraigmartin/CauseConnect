@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Observable } from 'rxjs/Observable';
+import { AuthService } from '../services/auth.service';
 
 @Component({
   selector: 'app-login',
@@ -7,7 +9,23 @@ import { Component, OnInit } from '@angular/core';
 })
 export class LoginComponent implements OnInit {
 
-  constructor() { }
+  constructor(private myService: AuthService) {}
+
+  formInfo: any = { username: '', password: ''};
+  user: any;
+  error: any;
+  title = 'app';
+
+  login() {
+    console.log(this.formInfo);
+    this.myService.login(this.formInfo)
+  .subscribe(
+    (user)  => {this.user = user;
+      console.log(this.user);
+    },
+      (err) => this.error = err
+    );
+  }
 
   ngOnInit() {
   }
