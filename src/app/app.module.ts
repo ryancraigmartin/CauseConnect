@@ -12,6 +12,7 @@ import { SignupComponent } from './signup/signup.component';
 import { ProfileComponent } from './profile/profile.component';
 import { NotFoundComponent } from './not-found/not-found.component';
 import { AuthService } from './services/auth.service';
+import { NavbarComponent } from './navbar/navbar.component';
 import { FooterComponent } from './footer/footer.component';
 
 const routes: Routes = [
@@ -49,6 +50,7 @@ const routes: Routes = [
     SignupComponent,
     ProfileComponent,
     NotFoundComponent,
+    NavbarComponent,
     FooterComponent
   ],
   imports: [
