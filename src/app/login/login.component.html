@@ -1,5 +1,5 @@
-<p>Login Route works!</p>
 <h2> Login to CauseConnect </h2>
+<<<<<<< HEAD
 <form>
   <div>
     <div class="form-group">
@@ -16,12 +16,42 @@
 </form>
 <p class="error"> {{ error }} </p>
 
+=======
+	<!-- <div class="logincontainer">
+		<form>
+			<div>
+				<div class="form-group">
+					<h4 for="username">Username: </h4>
+					<input type="text" class="form-control"  [(ngModel)]="formInfo.username" name="username" id="login_username" placeholder="Username">
+				</div>
+				<div class="form-group">
+					<h4 for="exampleInputPassword1">Password: </h4>
+					<input type="password" class="form-control" [(ngModel)]="formInfo.password" name="password" id="login_password" placeholder="Password">
+				</div>
+				<button type="submit" (click)="login()" class="btn btn-success">Log In</button>
+				<button type="submit" class="btn btn-primary">Sign Up</button>
+			</div>
+		</form>
+		<p class="error"> {{ error }} </p>
+	</div>
+	
+	<a [routerLink]="['/login']"> login </a>
+	<a [routerLink]="['/signup']"> signup </a>
+	<a [routerLink]="['/profile']"> profile </a>
+	<a [routerLink]="['/']"> home </a>
+	
+	<div *ngIf="user">
+		<h2> You are now logged in as {{ user.username }}!! </h2>
+		<p> Here's the user object </p>
+		<pre> {{ user | json }} </pre> -->
+>>>>>>> f31fa22929f3e599a3e797f0226a4866a3645953
 
 <a [routerLink]="['/login']"> login </a>
 <a [routerLink]="['/signup']"> signup </a>
 <a [routerLink]="['/profile']"> profile </a>
 <a [routerLink]="['/']"> home </a>
 
+<<<<<<< HEAD
 
 <div *ngIf="user">
   <h2> You are now logged in as {{ user.username }}!! </h2>
@@ -29,3 +59,45 @@
   <pre> {{ user | json }} </pre>
 </div>
 
+=======
+<div class="box">
+	<div id="header">
+		<div id="cont-lock">
+				<i class=" material-icons lock fas fa-lock-open"></i>
+		</div>
+		<div id="bottom-head">
+			<h1 id="logintoregister">Login</h1>
+		</div>
+	</div>
+	<form>
+		<div class="group">
+			<input name = "name" class="inputMaterial" [(ngModel)]="formInfo.username" type="text" required>
+			<span class="highlight"></span>
+			<span class="bar"></span>
+			<label>Username</label>
+		</div>
+		<div class="group">
+			<input name = "password" class="inputMaterial" [(ngModel)]="formInfo.password" type="password" required>
+			<span class="highlight"></span>
+			<span class="bar"></span>
+			<label>Password</label>
+		</div>
+		<button id="buttonlogintoregister" (click)="login()" type="submit">Login</button>
+	</form>
+	<div id="footer-box">
+		<p class="footer-text">Not a member?
+			<a [routerLink]="['/signup']" class="sign-up"> Sign up now</a>
+		</p>
+	</div>
+</div>
+
+<div *ngIf="user" style="background-color: chocolate">
+  <h2> You are now logged in as {{ user.username }}!! </h2>
+  <p> Here's the user object </p>
+	<pre> {{ user | json }} </pre> 
+</div>
+
+
+
+
+>>>>>>> f31fa22929f3e599a3e797f0226a4866a3645953
