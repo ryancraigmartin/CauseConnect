@@ -1,9 +1,12 @@
 import { Injectable } from '@angular/core'; // every time you make a service, include this
 import { Http, Response } from '@angular/http';
-import { Observable } from 'rxjs/Observable';
+
 import 'rxjs/add/operator/map';
 import 'rxjs/add/operator/catch';
-// import { HttpModule } from '@angular/http';
+import 'rxjs/add/operator/toPromise';
+import { Observable } from 'rxjs/Rx';
+
+
 
 @Injectable()
 export class AuthService {
@@ -14,15 +17,17 @@ export class AuthService {
     return Observable.throw(e.json().message);
   }
 
+  currentUser: any;
+
   signup(user) {
     return this.http.post(`http://localhost:3000/api/signup`, user)
-      .map(res => res.json())
+      .map(res => {console.log(res), res.json()})
       .catch(this.handleError);
   }
 
   login(user) {
     return this.http.post(`http://localhost:3000/api/login`, user)
-      .map(res => res.json())
+      .map(res => {this.currentUser = res, console.log(res), res.json()})
       .catch(this.handleError);
   }
 
@@ -40,7 +45,7 @@ export class AuthService {
 
   getPrivateData() {
     return this.http.get(`http://localhost:3000/api/private`)
-      .map(res => res.json())
+      .map(res => {console.log("heyyyy: ", res), res.json()})
       .catch(this.handleError);
   }
 }

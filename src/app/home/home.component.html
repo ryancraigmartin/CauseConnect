@@ -5,3 +5,13 @@
 <a [routerLink]="['/signup']"> signup </a>
 <a [routerLink]="['/profile']"> profile </a>
 <a [routerLink]="['/']"> home </a>
+
+
+
+
+Hi
+<div *ngIf="user">
+  <h2> You are now logged in as {{ user.username }}!! </h2>
+  <p> Here's the user object </p>
+  <pre> {{ user | json }} </pre>
+  </div>
