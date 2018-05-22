@@ -1,8 +1,11 @@
 <h2> Login to CauseConnect </h2>
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 >>>>>>> f869170f5a7a355333796b319dabb9fc1a5de466
+=======
+>>>>>>> d320a7730716d1dd9f89c9356b93aadde11d4a6f
 <form>
   <div>
     <div class="form-group">
@@ -19,35 +22,15 @@
 </form>
 <p class="error"> {{ error }} </p>
 <<<<<<< HEAD
-
 <<<<<<< HEAD
 =======
-	<!-- <div class="logincontainer">
-		<form>
-			<div>
-				<div class="form-group">
-					<h4 for="username">Username: </h4>
-					<input type="text" class="form-control"  [(ngModel)]="formInfo.username" name="username" id="login_username" placeholder="Username">
-				</div>
-				<div class="form-group">
-					<h4 for="exampleInputPassword1">Password: </h4>
-					<input type="password" class="form-control" [(ngModel)]="formInfo.password" name="password" id="login_password" placeholder="Password">
-				</div>
-				<button type="submit" (click)="login()" class="btn btn-success">Log In</button>
-				<button type="submit" class="btn btn-primary">Sign Up</button>
-			</div>
-		</form>
-		<p class="error"> {{ error }} </p>
-	</div>
-	
-	<a [routerLink]="['/login']"> login </a>
-	<a [routerLink]="['/signup']"> signup </a>
-	<a [routerLink]="['/profile']"> profile </a>
-	<a [routerLink]="['/']"> home </a>
-	
-	<div *ngIf="user">
+>>>>>>> d320a7730716d1dd9f89c9356b93aadde11d4a6f
+
+
+<div *ngIf="user" style="background-color: chocolate">
 		<h2> You are now logged in as {{ user.username }}!! </h2>
 		<p> Here's the user object </p>
+<<<<<<< HEAD
 		<pre> {{ user | json }} </pre> -->
 >>>>>>> f31fa22929f3e599a3e797f0226a4866a3645953
 =======
@@ -128,3 +111,10 @@ Hi
   <button (click)="getPrivateData()"> getPrivateData</button>
 </div>
 >>>>>>> f869170f5a7a355333796b319dabb9fc1a5de466
+=======
+		<pre> {{ user | json }} </pre> 
+		<div>
+				<button (click)="getPrivateData()">getPrivateData</button>
+		</div>
+</div> 
+>>>>>>> d320a7730716d1dd9f89c9356b93aadde11d4a6f

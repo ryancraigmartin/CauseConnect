@@ -50,7 +50,7 @@ const routes: Routes = [
     SignupComponent,
     ProfileComponent,
     NotFoundComponent,
-    NavbarComponent
+    NavbarComponent,
     FooterComponent
   ],
   imports: [

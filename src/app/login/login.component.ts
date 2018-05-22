@@ -4,7 +4,6 @@ import { AuthService } from '../services/auth.service'; // Session Service
 import { Router } from '@angular/router';
 import 'rxjs/add/operator/toPromise';
 
-
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
@@ -33,22 +32,15 @@ import 'rxjs/add/operator/toPromise';
     // console.log(this.formInfo);
     this.myService.login(this.formInfo)
       .subscribe(
-<<<<<<< HEAD
-<<<<<<< HEAD
-        (user) => { this.user = user;
-          console.log(this.user);
-        },
-        (err) => this.error = err
-=======
         (user) =>  this.user = JSON.parse(this.myService.currentUser._body),
-          (err) => this.error = err
+        (err) => this.error = err
       );
   }
 
   getPrivateData() {
     this.myService.getPrivateData()
     .subscribe(() => console.log("====================", JSON.parse(this.myService.currentUser._body).username),
-    err => console.log(err))
+    err => console.log(err));
   }
 
 
