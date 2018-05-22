@@ -3,6 +3,7 @@ import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { RouterModule, Routes } from '@angular/router';
 import { HttpModule } from '@angular/http';
+import { AngularFontAwesomeModule } from 'angular-font-awesome';
 
 import { AppComponent } from './app.component';
 import { HomeComponent } from './home/home.component';
@@ -11,6 +12,7 @@ import { SignupComponent } from './signup/signup.component';
 import { ProfileComponent } from './profile/profile.component';
 import { NotFoundComponent } from './not-found/not-found.component';
 import { AuthService } from './services/auth.service';
+import { FooterComponent } from './footer/footer.component';
 
 const routes: Routes = [
   {
@@ -46,9 +48,11 @@ const routes: Routes = [
     LoginComponent,
     SignupComponent,
     ProfileComponent,
-    NotFoundComponent
+    NotFoundComponent,
+    FooterComponent
   ],
   imports: [
+    AngularFontAwesomeModule,
     BrowserModule,
     HttpModule,
     FormsModule,

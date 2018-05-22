@@ -1,4 +1,3 @@
-<p>Login Route works!</p>
 <h2> Login to CauseConnect </h2>
 <form>
   <div>
@@ -16,13 +15,14 @@
 </form>
 <p class="error"> {{ error }} </p>
 
+<a [routerLink]="['/login']"> login </a>
+<a [routerLink]="['/signup']"> signup </a>
+<a [routerLink]="['/profile']"> profile </a>
+<a [routerLink]="['/']"> home </a>
+
 <div *ngIf="user">
   <h2> You are now logged in as {{ user.username }}!! </h2>
   <p> Here's the user object </p>
   <pre> {{ user | json }} </pre>
 
-<a [routerLink]="['/login']"> login </a>
-<a [routerLink]="['/signup']"> signup </a>
-<a [routerLink]="['/profile']"> profile </a>
-<a [routerLink]="['/']"> home </a>
 
