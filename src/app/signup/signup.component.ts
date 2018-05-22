@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Observable } from 'rxjs/Observable';
 import { AuthService } from '../services/auth.service';
+import { ActivatedRoute } from '@angular/router';
 // import { HttpModule } from '@angular/http';
 // import { Http, Response } from '@angular/http';
 
@@ -13,11 +14,15 @@ export class SignupComponent implements OnInit {
 
   constructor(private myService: AuthService) {}
 
-  formInfo: any = { username: '', password: '', email: '' };
+  formInfo: any = {
+    username: '',
+    password: '',
+    email: ''
+  };
 
 user: any;
 error: any;
-title = 'app';
+title = 'app'; // ?
 
 signup() {
   console.log(this.formInfo);
