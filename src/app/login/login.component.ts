@@ -1,15 +1,42 @@
 import { Component, OnInit } from '@angular/core';
+import { Observable } from 'rxjs/Observable';
+import { AuthService } from '../services/auth.service';
+import { ActivatedRoute } from '@angular/router';
+// import { HttpModule } from '@angular/http';
+// import { Http, Response } from '@angular/http';
 
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
   styleUrls: ['./login.component.css']
 })
-export class LoginComponent implements OnInit {
 
-  constructor() { }
+  export class LoginComponent implements OnInit {
 
-  ngOnInit() {
+    constructor(private myService: AuthService) {}
+
+    formInfo: any = {
+      username: '',
+      password: ''
+    };
+
+  user: any;
+  error: any;
+
+  login() {
+    console.log(this.formInfo);
+    this.myService.login(this.formInfo)
+      .subscribe(
+        (user) => { this.user = user;
+          console.log(this.user);
+          console.log("Logging in?");
+        },
+        (err) => this.error = err
+      );
   }
 
-}
+  ngOnInit() {
+
+  }
+
+  }
