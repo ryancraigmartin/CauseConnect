@@ -19,8 +19,9 @@
 <div *ngIf="user" style="background-color: chocolate">
 		<h2> You are now logged in as {{ user.username }}!! </h2>
 		<p> Here's the user object </p>
-		<pre> {{ user | json }} </pre> 
+		<pre> {{ user | json }} </pre>
 		<div>
-				<button (click)="getPrivateData()">getPrivateData</button>
+        <button (click)="getPrivateData()">getPrivateData</button>
+        <a routerLink="/profile/{{user.username}}">Go to Profile page</a>
 		</div>
-</div> 
+</div>

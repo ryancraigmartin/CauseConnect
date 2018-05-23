@@ -10,38 +10,38 @@ export class AuthService {
 
   constructor(private http: Http) { }
 
+  currentUser: any;
+
   handleError(e) {
     return Observable.throw(e.json().message);
   }
 
-  currentUser: any;
-
   signup(user) {
-    return this.http.post(`http://localhost:3000/api/signup`, user)
+    return this.http.post(`http://localhost:3000/api/signup`, user, {withCredentials: true})
       .map(res => {console.log(res), res.json()})
       .catch(this.handleError);
   }
 
   login(user) {
-    return this.http.post(`http://localhost:3000/api/login`, user)
+    return this.http.post(`http://localhost:3000/api/login`, user, {withCredentials: true})
       .map(res => {this.currentUser = res, console.log(res), res.json()})
       .catch(this.handleError);
   }
 
   logout() {
-    return this.http.post(`http://localhost:3000/api/logout`, {})
+    return this.http.post(`http://localhost:3000/api/logout`, {withCredentials: true})
       .map(res => res.json())
       .catch(this.handleError);
   }
 
   isLoggedIn() {
-    return this.http.get(`http://localhost:3000/api/loggedin`)
+    return this.http.get(`http://localhost:3000/api/loggedin`, {withCredentials: true})
       .map(res => res.json())
       .catch(this.handleError);
   }
 
   getPrivateData() {
-    return this.http.get(`http://localhost:3000/api/private`)
+    return this.http.get(`http://localhost:3000/api/private`, {withCredentials: true})
       .map(res => {console.log("heyyyy: ", res), res.json()})
       .catch(this.handleError);
   }
