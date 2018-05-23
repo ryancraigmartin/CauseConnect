@@ -1,9 +1,16 @@
 <p>
   profile works!
-  <!-- <div *ngIf="user"> -->
-      <!-- <h2> You are now logged in as {{ user.username }}!! </h2>  -->
-
 </p>
+
+<div *ngIf="user" style="background-color: chocolate">
+  <h2> You are now logged in as {{ user.username }}!! </h2>
+  <p> Here's the user object </p>
+  <pre> {{ user | json }} </pre>
+  <div>
+      <button (click)="getPrivateData()">getPrivateData</button>
+      <a [routerLink]="['/login']">Go to Login</a>
+  </div>
+</div>
 
 <a [routerLink]="['/login']"> login </a>
 <a [routerLink]="['/signup']"> signup </a>
