@@ -36,6 +36,16 @@ signup() {
 }
 
 ngOnInit() {
+  this.myService.isLoggedIn()
+  .toPromise()
+  .then(() => {
+    this.formInfo = this.myService.currentUser;
+    // console.log(this.formInfo); ===== Works !
+  })
+  .catch(err => {
+    console.log(err);
+    // this.myRouter.navigate(['/login']);
+  });
 }
 
 }
