@@ -72,9 +72,9 @@ import 'rxjs/add/operator/toPromise';
       );
   }
 
-  getPrivateData() {
-    this.myService.getPrivateData()
-    .subscribe(() => console.log("====================", JSON.parse(this.myService.currentUser._body).username),
-    err => console.log(err));
-  }
+  // getPrivateData() {
+  //   this.myService.getPrivateData()
+  //   .subscribe(() => console.log("====================", JSON.parse(this.myService.currentUser._body).username),
+  //   err => console.log(err));
+  // }
 }

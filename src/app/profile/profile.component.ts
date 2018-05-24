@@ -44,4 +44,16 @@ export class ProfileComponent implements OnInit {
       // this.myRouter.navigate(['/login']);
     });
   }
+
+  logout() {
+    this.myService.logout()
+      .subscribe(
+        () => {
+          this.user = null;
+          this.formInfo = {};
+          this.myRouter.navigate(['/']);
+        },
+        (err) => this.error = err
+      );
+  }
 }
