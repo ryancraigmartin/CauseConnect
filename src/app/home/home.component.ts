@@ -26,7 +26,6 @@ login() {
     .subscribe(
       (user) => { this.user = user;
         console.log(this.user);
-        console.log("Logging in?");
       },
       (err) => this.error = err
     );
