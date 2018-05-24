@@ -14,8 +14,7 @@ import 'rxjs/add/operator/toPromise';
 
     formInfo: any = {
       username: '',
-      password: '',
-      email: ''
+      password: ''
     };
 
   user: any;
@@ -42,7 +41,4 @@ import 'rxjs/add/operator/toPromise';
     .subscribe(() => console.log("====================", JSON.parse(this.myService.currentUser._body).username),
     err => console.log(err));
   }
-
-
-
-  }
+}
