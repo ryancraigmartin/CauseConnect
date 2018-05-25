@@ -1,4 +1,5 @@
 <h2> Login to CauseConnect </h2>
+
 <form>
   <div>
     <div class="form-group">
@@ -15,12 +16,11 @@
 <p class="error"> {{ error }} </p>
 
 
-<div *ngIf="formInfo" style="background-color: chocolate">
+<div *ngIf="formInfo.username" style="background-color: chocolate">
 		<h2> You are now logged in as {{ formInfo.username }}!! </h2>
 		<p> Here's the user object </p>
 		<pre> {{ formInfo | json }} </pre>
 		<div>
-        <button (click)="getPrivateData()">getPrivateData</button>
         <a routerLink="/profile/{{formInfo.username}}">Go to Profile page</a>
         <button (click)="logout()">Log Out</button>
 		</div>
