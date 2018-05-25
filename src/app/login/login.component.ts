@@ -24,21 +24,57 @@ import 'rxjs/add/operator/toPromise';
   constructor (private myService: AuthService, private myRouter: Router) {}
 
   ngOnInit() {
+    // this.myService.isLoggedIn()
+    // .toPromise()
+    // .then(() => {
+    //     this.user = JSON.parse(this.myService.currentUser._body);
+    //     console.log('user in profile component: ', this.user);
+    // })
+    // .catch( err => {
+    //   console.log('Err in profile: ', err);
+    //   this.myRouter.navigate(['/login']);
+    // });
 
+    this.myService.isLoggedIn()
+      .toPromise()
+      .then(() => {
+        this.formInfo = this.myService.currentUser;
+        // console.log(this.formInfo); ===== Works !
+      })
+      .catch(err => {
+        console.log(err);
+        // this.myRouter.navigate(['/login']);
+      });
   }
 
   login() {
-    // console.log(this.formInfo);
+    // this.myService.login(this.formInfo)
+    //   .subscribe(
+    //     (user) =>  this.user = JSON.parse(this.myService.currentUser._body),
+    //     (err) => this.error = err
+    //   );
     this.myService.login(this.formInfo)
       .subscribe(
-        (user) =>  this.user = JSON.parse(this.myService.currentUser._body),
+        (user) =>  this.user = user,
         (err) => this.error = err
       );
   }
 
-  getPrivateData() {
-    this.myService.getPrivateData()
-    .subscribe(() => console.log("====================", JSON.parse(this.myService.currentUser._body).username),
-    err => console.log(err));
+  logout() {
+    this.myService.logout()
+      .subscribe(
+        () => {
+          this.user = null;
+          this.formInfo = {};
+          this.myRouter.navigate(['/']);
+        },
+        (err) => this.error = err
+      );
   }
+
+  // getPrivateData() {
+  //   this.myService.getPrivateData()
+  //   .subscribe(() => console.log("====================", JSON.parse(this.myService.currentUser._body).username),
+  //   err => console.log(err));
+  // }
 }

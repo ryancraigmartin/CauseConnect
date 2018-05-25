@@ -11,9 +11,9 @@ import { LoginComponent } from './login/login.component';
 import { SignupComponent } from './signup/signup.component';
 import { ProfileComponent } from './profile/profile.component';
 import { NotFoundComponent } from './not-found/not-found.component';
-import { AuthService } from './services/auth.service';
 import { NavbarComponent } from './navbar/navbar.component';
 import { FooterComponent } from './footer/footer.component';
+import { AuthService } from './services/auth.service';
 
 const routes: Routes = [
   {
@@ -53,6 +53,7 @@ const routes: Routes = [
     NavbarComponent,
     FooterComponent
   ],
+
   imports: [
     AngularFontAwesomeModule,
     BrowserModule,

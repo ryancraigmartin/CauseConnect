@@ -10,19 +10,50 @@ import 'rxjs/add/operator/toPromise';
   styleUrls: ['./profile.component.css']
 })
 export class ProfileComponent implements OnInit {
-user: any;
+
+  formInfo: any = {
+    username: '',
+    password: ''
+  };
+
+  user: any;
+  error: any;
+  privateData: any;
+
   constructor (private myService: AuthService, private myRouter: Router) {}
 
   ngOnInit() {
+    // this.myService.isLoggedIn()
+    // .toPromise()
+    // .then(  () => {
+    //     this.user = JSON.parse(this.myService.currentUser._body);
+    //     console.log('user in profile component: ', this.user);
+    // })
+    // .catch( err => {
+    //   console.log('Err in profile: ', err);
+    //   this.myRouter.navigate(['/login']);
+    // });
     this.myService.isLoggedIn()
     .toPromise()
-    .then(  () => {
-        this.user = JSON.parse(this.myService.currentUser._body);
-        console.log('user in profile component: ', this.user);
+    .then(() => {
+      this.formInfo = this.myService.currentUser;
+      // console.log(this.formInfo); ===== Works !
     })
-    .catch( err => {
-      console.log('Err in profile: ',err);
-      this.myRouter.navigate(['/login']);
+    .catch(err => {
+      console.log(err);
+      // this.myRouter.navigate(['/login']);
     });
+  }
+
+  logout() {
+    this.myService.logout()
+      .subscribe(
+        () => {
+          this.user = null;
+          this.formInfo = {};
+          this.myRouter.navigate(['/']);
+        },
+        (err) => this.error = err
+      );
   }
 }

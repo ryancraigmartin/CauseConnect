@@ -1,14 +1,17 @@
-<p>
-  profile works!
-</p>
-
-<div *ngIf="user" style="background-color: chocolate">
-  <h2> You are now logged in as {{ user.username }}!! </h2>
+<div *ngIf="formInfo.email" style="background-color: chocolate" class="update-user-form">
+  <input type="email "ngModel="{{formInfo.email}}" class="form-control" placeholder="email">
+  <br>
+  <input type="text" ngModel="{{formInfo.username}}" class="form-control" placeholder="username">
+  <br>
+  <input type="password" ngModel="{{formInfo.password}}" class="form-control" placeholder="password">
+  <br>
+  <button (click)="updateformInfo()" class="btn bth-info">Update</button>
+  <br>
   <p> Here's the user object </p>
-  <pre> {{ user | json }} </pre>
+  <pre> {{ formInfo | json }} </pre>
   <div>
-      <button (click)="getPrivateData()">getPrivateData</button>
-      <a [routerLink]="['/login']">Go to Login</a>
+    <a [routerLink]="['/login']">Go to Login</a>
+    <button (click)="logout()">Log Out</button>
   </div>
 </div>
 
