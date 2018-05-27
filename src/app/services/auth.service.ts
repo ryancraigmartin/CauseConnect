@@ -60,7 +60,11 @@ export class AuthService {
 
   getPrivateData() {
     return this.http.get(`http://localhost:3000/api/private`, {withCredentials: true})
+<<<<<<< HEAD
       .map(res => {console.log('Hello: ', res), res.json()})
+=======
+      .map(res => {console.log('heyyyy: ', res), res.json()})
+>>>>>>> 81c0325d3fe3658f2de589fb1835e0b0f110bd0e
       .catch(this.handleError);
   }
 

@@ -15,6 +15,8 @@ import { NavbarComponent } from './navbar/navbar.component';
 import { FooterComponent } from './footer/footer.component';
 import { AuthService } from './services/auth.service';
 import { UserProfilesService } from './services/userprofiles.service';
+import { ModalComponent } from './modal/modal.component';
+import { NgbModule, NgbModal, NgbActiveModal } from '@ng-bootstrap/ng-bootstrap';
 
 const routes: Routes = [
   {
@@ -38,6 +40,10 @@ const routes: Routes = [
     path: 'profile/:username',
     component: ProfileComponent
   },
+  { // login route.
+    path: 'modal',
+    component: ModalComponent
+  },
   { // 404 route.
     path: '**', // Wildcard. Captures anything that isn't a valid route.
     component: NotFoundComponent
@@ -52,7 +58,8 @@ const routes: Routes = [
     ProfileComponent,
     NotFoundComponent,
     NavbarComponent,
-    FooterComponent
+    FooterComponent,
+    ModalComponent
   ],
 
   imports: [
@@ -60,9 +67,11 @@ const routes: Routes = [
     BrowserModule,
     HttpModule,
     FormsModule,
-    RouterModule.forRoot(routes)
+    RouterModule.forRoot(routes),
+    NgbModule.forRoot()
   ],
+  entryComponents: [ModalComponent],
   providers: [AuthService, UserProfilesService], // Services go here.
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent, ModalComponent]
 })
-export class AppModule { }
+export class AppModule {}

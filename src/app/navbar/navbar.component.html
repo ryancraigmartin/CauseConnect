@@ -14,16 +14,13 @@
             <a class="nav-link" href="/profile" *ngIf="isLoggedIn">Profile</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="/login" *ngIf="!isLoggedIn">Login</a>
+            <a class="nav-link"  data-target="#loginComponent" data-toggle="loginComponent" routerLink="/login" *ngIf="!isLoggedIn">Login</a>
           </li>
             <li class="nav-item">
             <a class="nav-link" href="/signup" *ngIf="!isLoggedIn">Signup</a>
           </li>
           <li class="nav-item">
               <a class="nav-link" href="#">Organizations</a>
-          </li>
-          <li *ngIf="user" class="nav-item">
-            <a class="nav-link" routerLink="/profile/{{formInfo.username}}">My Profile</a>
           </li>
           <li *ngIf="formInfo" class="nav-item">
               <a class="nav-link" routerLink="/profile/{{formInfo.username}}">My Profile</a>
