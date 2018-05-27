@@ -52,7 +52,7 @@ export class AuthService {
     return this.http.get(`http://localhost:3000/api/loggedin`, {withCredentials: true})
       .map(res => {
         this.currentUser = res.json();
-        console.log('user in the service ', res);
+        console.log('User Session: ', res);
         res.json();
       })
       .catch(this.handleError);
@@ -60,7 +60,7 @@ export class AuthService {
 
   getPrivateData() {
     return this.http.get(`http://localhost:3000/api/private`, {withCredentials: true})
-      .map(res => {console.log("heyyyy: ", res), res.json()})
+      .map(res => {console.log('Hello: ', res), res.json()})
       .catch(this.handleError);
   }
 

@@ -33,6 +33,7 @@ export class ProfileComponent implements OnInit {
     //   console.log('Err in profile: ', err);
     //   this.myRouter.navigate(['/login']);
     // });
+
     this.myService.isLoggedIn()
     .toPromise()
     .then(() => {

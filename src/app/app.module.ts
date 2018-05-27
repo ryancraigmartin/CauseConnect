@@ -14,6 +14,7 @@ import { NotFoundComponent } from './not-found/not-found.component';
 import { NavbarComponent } from './navbar/navbar.component';
 import { FooterComponent } from './footer/footer.component';
 import { AuthService } from './services/auth.service';
+import { UserProfilesService } from './services/userprofiles.service';
 
 const routes: Routes = [
   {
@@ -61,7 +62,7 @@ const routes: Routes = [
     FormsModule,
     RouterModule.forRoot(routes)
   ],
-  providers: [AuthService], // Services go here.
+  providers: [AuthService, UserProfilesService], // Services go here.
   bootstrap: [AppComponent]
 })
 export class AppModule { }

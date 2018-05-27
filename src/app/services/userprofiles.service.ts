@@ -11,9 +11,5 @@ export class UserProfilesService {
 
   constructor(private myHttp: Http) { }
 
-  getUserProfiles() {
-    return this.myHttp.get('http://localhost:3000')
-    .map((responseFromApi) => responseFromApi.json());
-  }
 
 }
