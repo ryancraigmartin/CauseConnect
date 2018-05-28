@@ -9,7 +9,8 @@
        font-family: 'Open Sans', sans-serif;
    }
    
-   .fb-profile img.fb-image-lg{
+   /* class targeting fb profile and background cover */
+   .fb-profile-image img.fb-image-cover{
        z-index: 0;
        width: 100%;  
        margin-bottom: 10px;
