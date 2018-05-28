@@ -9,7 +9,22 @@ import { Observable } from 'rxjs/Rx';
 @Injectable()
 export class UserProfilesService {
 
-  constructor(private myHttp: Http) { }
+  constructor(private http: Http) { }
 
+  currentUser: any;
+
+  handleError(e) {
+    return Observable.throw(e.json().message);
+  }
+
+  isLoggedIn() {
+    return this.http.get(`http://localhost:3000/api/loggedin`, {withCredentials: true})
+      .map(res => {
+        this.currentUser = res.json();
+        console.log('User Session: ', res);
+        res.json();
+      })
+      .catch(this.handleError);
+  } 
 
 }

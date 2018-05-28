@@ -9,13 +9,13 @@
        font-family: 'Open Sans', sans-serif;
    }
    
-   .fb-profile img.fb-image-lg{
+   .fb-profile img.cover-photo{
        z-index: 0;
        width: 100%;  
        margin-bottom: 10px;
    }
    
-   .fb-image-profile
+   .profile-image
    {
        margin: -90px 10px 20px 80px;
        z-index: 9;
