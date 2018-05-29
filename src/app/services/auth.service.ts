@@ -40,12 +40,6 @@ export class AuthService {
     return this.http.delete(`http://localhost:3000/api/logout`, {withCredentials: true})
       .map(res => res.json())
       .catch(this.handleError);
-    // return this.http.delete(`http://localhost:3000/api/logout`, {withCredentials: true})
-    // .toPromise()
-    // .then((apiResult) => {
-    //   this.currentUser = null;
-    //   return apiResult;
-    // });
   }
 
   isLoggedIn() {

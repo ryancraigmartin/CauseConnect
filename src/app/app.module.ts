@@ -37,7 +37,7 @@ const routes: Routes = [
     component: SignupComponent
   },
   { // User Profile route.
-    path: 'profile/:username',
+    path: 'profile',
     component: ProfileComponent
   },
   { // login route.
