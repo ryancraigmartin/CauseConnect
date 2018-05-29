@@ -25,6 +25,11 @@ export class UserProfilesService {
         res.json();
       })
       .catch(this.handleError);
-  } 
+  }
 
+
+  saveProfileInfo(profileInfo) {
+      return this.http.post(`http://localhost:3000/profile/update/`, profileInfo)
+      .map((responseFromApi) => responseFromApi.json());
+  }
 }

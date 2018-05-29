@@ -1,7 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { Observable } from 'rxjs/Observable';
-import { AuthService } from '../services/auth.service'; // Session Service
 import { Router } from '@angular/router';
+import { AuthService } from '../services/auth.service'; // Session Service
+import { UserProfilesService } from '../services/userprofiles.service'; // Profile Service
 import 'rxjs/add/operator/toPromise';
 
 @Component({
@@ -11,16 +12,31 @@ import 'rxjs/add/operator/toPromise';
 })
 export class ProfileComponent implements OnInit {
 
+  // Holds the session info for the user.
   formInfo: any = {
     username: '',
     password: ''
   };
 
+  // Profile info object to hold retrieved data.
+  profileInfo: any = {
+    profileImage: '',
+    backgroundImage: '',
+    name: '',
+    aboutUser: '',
+    age: '',
+    email: '',
+    phone: '',
+    facebook: '',
+    linkedin: ''
+  };
+
   user: any;
   error: any;
-  privateData: any;
 
-  constructor (private myService: AuthService, private myRouter: Router) {}
+  constructor (private myService: AuthService,
+               private myRouter: Router,
+               private profileService: UserProfilesService) {}
 
   ngOnInit() {
     // this.myService.isLoggedIn()
@@ -56,5 +72,19 @@ export class ProfileComponent implements OnInit {
         },
         (err) => this.error = err
       );
+  }
+
+  saveProfileInfo() {
+  //   this.profileInfo.name = this.name;
+  //   this.profileInfo.aboutUser = this.aboutUser;
+  //   this.profileInfo.age = this.age;
+  //   this.profileInfo.email = this.email;
+  //   this.profileInfo.phone = this.phone;
+  //   this.profileInfo.facebook = this.phofacebookne;
+  //   this.profileInfo.linkedin = this.linkedin;
+  //   this.profileService.saveProfileInfo(this.profileInfo)
+  //   .subscribe();
+  //   this.myRouter.navigate([`/profile/${this.username}`]);
+  // }
   }
 }
