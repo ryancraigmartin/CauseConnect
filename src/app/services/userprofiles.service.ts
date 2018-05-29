@@ -1,10 +1,11 @@
+import { ProfileInfo } from './../interfaces/profile-info';
 import { Injectable } from '@angular/core'; // every time you make a service, include this
 import { Http, Response } from '@angular/http';
 import 'rxjs/add/operator/map';
 import 'rxjs/add/operator/catch';
 import 'rxjs/add/operator/toPromise';
 import { Observable } from 'rxjs/Rx';
-
+import { Profile } from 'selenium-webdriver/firefox';
 
 @Injectable()
 export class UserProfilesService {
@@ -26,10 +27,19 @@ export class UserProfilesService {
       })
       .catch(this.handleError);
   }
+  
+  getEntries() {
+    return this.http.get(
+      'http://localhost:3000/profile',
+      { withCredentials: true }
+    );
+  }
 
-
-  saveProfileInfo(profileInfo) {
-      return this.http.post(`http://localhost:3000/profile/update/`, profileInfo)
-      .map((responseFromApi) => responseFromApi.json());
+  postEntries(entryFields: ProfileInfo) {
+    return this.http.post(
+      'http://localhost:3000/profile/edit',
+      entryFields,
+      { withCredentials: true }
+    );
   }
 }
