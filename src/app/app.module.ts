@@ -38,6 +38,10 @@ const routes: Routes = [
     path: 'profile/:username',
     component: ProfileComponent
   },
+  {
+    path: 'non-profits',
+    component: NonProfitsComponent
+  },
   { // 404 route.
     path: '**', // Wildcard. Captures anything that isn't a valid route.
     component: NotFoundComponent
