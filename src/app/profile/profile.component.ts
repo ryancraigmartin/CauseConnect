@@ -1,7 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 import { Observable } from 'rxjs/Observable';
+import { Router, ActivatedRoute } from '@angular/router';
 import { AuthService } from '../services/auth.service'; // Session Service
-import { Router } from '@angular/router';
+import { UserProfilesService } from '../services/userprofiles.service'; // Profile Service
+import { ProfileInfo } from './../interfaces/profile-info'; // ProfileInfo interface
+
 import 'rxjs/add/operator/toPromise';
 
 @Component({
@@ -11,6 +14,21 @@ import 'rxjs/add/operator/toPromise';
 })
 export class ProfileComponent implements OnInit {
 
+  // Profile info object to hold retrieved data.
+  newEntry: ProfileInfo = {
+    name: '',
+    aboutUser: '',
+    age: '',
+    email: '',
+    phone: '',
+    facebook: '',
+    linkedin: '',
+    volunteerExperience: '',
+    //   profileImage: '',
+    //   backgroundImage: '',
+  };
+
+  // Holds the session info for the user.
   formInfo: any = {
     username: '',
     password: ''
@@ -18,31 +36,31 @@ export class ProfileComponent implements OnInit {
 
   user: any;
   error: any;
-  privateData: any;
 
-  constructor (private myService: AuthService, private myRouter: Router) {}
+  // profileInfo: any;
+  entries: any[] = [];
+
+  constructor(
+    private myService: AuthService,
+    private myRouter: Router,
+    private profileService: UserProfilesService,
+    private activatedRoute: ActivatedRoute) { }
 
   ngOnInit() {
-    // this.myService.isLoggedIn()
-    // .toPromise()
-    // .then(  () => {
-    //     this.user = JSON.parse(this.myService.currentUser._body);
-    //     console.log('user in profile component: ', this.user);
-    // })
-    // .catch( err => {
-    //   console.log('Err in profile: ', err);
-    //   this.myRouter.navigate(['/login']);
-    // });
+
+
+    this.profileService.getEntries();
+
     this.myService.isLoggedIn()
-    .toPromise()
-    .then(() => {
-      this.formInfo = this.myService.currentUser;
-      // console.log(this.formInfo); ===== Works !
-    })
-    .catch(err => {
-      console.log(err);
-      // this.myRouter.navigate(['/login']);
-    });
+      .toPromise()
+      .then(() => {
+        this.formInfo = this.myService.currentUser;
+        // console.log(this.formInfo); ===== Works !
+      })
+      .catch(err => {
+        console.log(err);
+        // this.myRouter.navigate(['/login']);
+      });
   }
 
   logout() {
@@ -56,4 +74,14 @@ export class ProfileComponent implements OnInit {
         (err) => this.error = err
       );
   }
+
+  saveProfileInfo() {
+    this.profileService.postEntries(this.newEntry)
+      .subscribe(() => {
+        this.myRouter.navigate(['profile']);
+      });
+  }
+
+
 }
+

@@ -70,14 +70,13 @@
        font-family: 'Open Sans', sans-serif;
    }
    
-   /* class targeting fb profile and background cover */
-   .fb-profile-image img.fb-image-cover{
+   .fb-profile img.cover-photo{
        z-index: 0;
        width: 100%;  
        margin-bottom: 10px;
    }
    
-   .fb-image-profile
+   .profile-image
    {
        margin: -90px 10px 20px 80px;
        z-index: 9;
