@@ -43,11 +43,14 @@
                     <br>                
                   <button type="submit" (ngSubmit)="saveProfileInfo()" class="btn btn-danger btn-block">Submit</button>
                   <button type="submit" (click)="logout()" class="btn btn-info">Logout</button>
+                  <div *ngIf = "showProfileStuff">{{newEntry.name}}</div>
                 </div>
               </div>
             </div>
           </div>
         </div>
+
+        <!-- <div *ngIf = "showProfileStuff"> {{newEntry.age}} -->
         <div class="col-sm-4">
           <div class="row">
             <div data-spy="scroll" class="tabbable-panel">
