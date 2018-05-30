@@ -40,11 +40,15 @@ export class ProfileComponent implements OnInit {
   // profileInfo: any;
   entries: any[] = [];
 
-  constructor(
+  constructor (
     private myService: AuthService,
     private myRouter: Router,
     private profileService: UserProfilesService,
-    private activatedRoute: ActivatedRoute) { }
+    private activatedRoute: ActivatedRoute) {
+      // console.log( profileService, myRouter );
+      // this.profileService = profileService;
+      // console.log(this.profileService);
+    }
 
   ngOnInit() {
 
@@ -76,8 +80,10 @@ export class ProfileComponent implements OnInit {
   }
 
   saveProfileInfo() {
-    this.profileService.postEntries(this.newEntry)
-      .subscribe(() => {
+    var profileSaved = this.profileService.postEntries(this.newEntry);
+    console.log(profileSaved);
+    console.log(this.profileService);
+      profileSaved.subscribe(() => {
         this.myRouter.navigate(['profile']);
       });
   }

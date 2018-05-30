@@ -37,12 +37,35 @@
                   <h4>Skills</h4>
                   <input id="skills-text" [(ngModel)]="newEntry.skills" name="skills">
                   <h4>Causes</h4>
+
+                  <div><label class="switch">Community
+                    <input type="checkbox">
+                    <span class="slider round">Community</span>
+                  </label></div>
+               
+                    <!-- <div class="row">
+                      <div class="col">left column </div>
+                      <div class="col">
+                        <label class="switch">
+                          <input type="checkbox">
+                          <span class="slider round"></span>
+                        </label>
+                      </div> -->
+                      <!-- <div class="col"></div>
+                      <div class="col">right column</div>
+                      <div class="col">
+                        <label class="switch">
+                          <input type="checkbox">
+                          <span class="slider round"></span>
+                        </label>
+                      </div> -->
+
                   <span class="causes-buttons">
                     <br>
                   </span>
                     <br>                
-                  <button type="submit" (ngSubmit)="saveProfileInfo()" class="btn btn-danger btn-block">Submit</button>
-                  <button type="submit" (click)="logout()" class="btn btn-info">Logout</button>
+                  <button type="submit" class="btn btn-danger btn-block">Submit</button>
+                  <!-- <button type="submit" (click)="logout()" class="btn btn-info">Logout</button> -->
                 </div>
               </div>
             </div>
@@ -81,21 +104,7 @@
     </div>
   </form>
 
-  <!-- <div class="row">
-      <div class="col">left column </div>
-      <div class="col">  
-        <label class="switch">
-        <input type="checkbox">
-        <span class="slider round"></span>
-      </label></div>
-      <div class="col"></div>
-      <div class="col">right column</div>
-      <div class="col"> 
-        <label class="switch">
-        <input type="checkbox">
-        <span class="slider round"></span>
-      </label>
-    </div> -->
+
   
   <a [routerLink]="['/login']"> login </a>
   <a [routerLink]="['/signup']"> signup </a>
