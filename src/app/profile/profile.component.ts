@@ -40,15 +40,15 @@ export class ProfileComponent implements OnInit {
   // profileInfo: any;
   entries: any[] = [];
 
-  constructor (
+  constructor(
     private myService: AuthService,
     private myRouter: Router,
     private profileService: UserProfilesService,
     private activatedRoute: ActivatedRoute) {
-      // console.log( profileService, myRouter );
-      // this.profileService = profileService;
-      // console.log(this.profileService);
-    }
+    // console.log( profileService, myRouter );
+    // this.profileService = profileService;
+    // console.log(this.profileService);
+  }
 
   ngOnInit() {
 

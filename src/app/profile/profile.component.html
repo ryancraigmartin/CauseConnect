@@ -1,49 +1,51 @@
 <div class="container-fluid">
-    <div class="row">
-      <div class="profile-images">
-        <img align="left" class="cover-photo" src="https://storage.googleapis.com/proudcity/deleontx/uploads/2016/12/preview-wattpad-cover-maker-thumbnail.jpg"
-          alt="Cover Photo" width="2000" height="500" />
-        <img align="left" class="profile-image thumbnail" src="https://loremflickr.com/320/240" alt="Profile Photo" />
-        <div class="profile-username">
-          <h1>{{ formInfo.username }}</h1>
-        </div>
+  <div class="row">
+    <div class="profile-images">
+      <img align="left" class="cover-photo" src="https://storage.googleapis.com/proudcity/deleontx/uploads/2016/12/preview-wattpad-cover-maker-thumbnail.jpg"
+        alt="Cover Photo" width="2000" height="500" />
+      <img align="left" class="profile-image thumbnail" src="https://loremflickr.com/320/240" alt="Profile Photo" />
+      <div class="profile-username">
+        <h1>{{ formInfo.username }}</h1>
       </div>
     </div>
   </div>
-  <form id="nameform" (ngSubmit)="saveProfileInfo()">
-    <div class="container">
-      <div class="row">
-        <div class="col-sm-8">
-          <div data-spy="scroll" class="tabbable-panel">
-            <div class="tabbable-line">
-              <ul class="nav nav-tabs ">
-                <li class="active">
-                  <a data-toggle="tab">
-                    About
-                    <b> {{ formInfo.username }}</b>
-                  </a>
-                </li>
-              </ul>
-              <div class="tab-content">
-                <div class="tab-pane active" id="tab_default_1">
-                  <h4>Name</h4>
-                  <input id="name" [(ngModel)]="newEntry.name" name="name">
-                  <h4>Age</h4>
-                  <input id="age" [(ngModel)]="newEntry.age" name="age">
-                  <h4>Background </h4>
-                  <input type="text-area" id="aboutUser-text" [(ngModel)]="newEntry.aboutUser" name="aboutUser">
-                  <h4>Experience </h4>
-                  <input type="text-area" id="volunteerExperience-text" [(ngModel)]="newEntry.volunteerExperience" name="volunteerExperience">
-                  <h4>Skills</h4>
-                  <input id="skills-text" [(ngModel)]="newEntry.skills" name="skills">
-                  <h4>Causes</h4>
+</div>
+<form id="nameform" (ngSubmit)="saveProfileInfo()">
+  <div class="container">
+    <div class="row">
+      <div class="col-sm-8">
+        <div data-spy="scroll" class="tabbable-panel">
+          <div class="tabbable-line">
+            <ul class="nav nav-tabs ">
+              <li class="active">
+                <a data-toggle="tab">
+                  About
+                  <b> {{ formInfo.username }}</b>
+                </a>
+              </li>
+            </ul>
+            <div class="tab-content">
+              <div class="tab-pane active" id="tab_default_1">
+                <h4>Name</h4>
+                <input id="name" [(ngModel)]="newEntry.name" name="name">
+                <h4>Age</h4>
+                <input id="age" [(ngModel)]="newEntry.age" name="age">
+                <h4>Background </h4>
+                <input type="text-area" id="aboutUser-text" [(ngModel)]="newEntry.aboutUser" name="aboutUser">
+                <h4>Experience </h4>
+                <input type="text-area" id="volunteerExperience-text" [(ngModel)]="newEntry.volunteerExperience" name="volunteerExperience">
+                <h4>Skills</h4>
+                <input id="skills-text" [(ngModel)]="newEntry.skills" name="skills">
+                <h4>Causes</h4>
 
-                  <div><label class="switch">Community
+                <div>
+                  <label class="switch">Community
                     <input type="checkbox">
                     <span class="slider round">Community</span>
-                  </label></div>
-               
-                    <!-- <div class="row">
+                  </label>
+                </div>
+
+                <!-- <div class="row">
                       <div class="col">left column </div>
                       <div class="col">
                         <label class="switch">
@@ -51,7 +53,7 @@
                           <span class="slider round"></span>
                         </label>
                       </div> -->
-                      <!-- <div class="col"></div>
+                <!-- <div class="col"></div>
                       <div class="col">right column</div>
                       <div class="col">
                         <label class="switch">
@@ -64,44 +66,46 @@
                     <br>
                   </span>
                     <br>                
-<<<<<<< HEAD
-                  <button type="submit" class="btn btn-danger btn-block">Submit</button>
-                  <!-- <button type="submit" (click)="logout()" class="btn btn-info">Logout</button> -->
-=======
                   <button type="submit" (ngSubmit)="saveProfileInfo()" class="btn btn-danger btn-block">Submit</button>
                   <button type="submit" (click)="logout()" class="btn btn-info">Logout</button>
                   <div *ngIf = "showProfileStuff">{{newEntry.name}}</div>
->>>>>>> ce119a675aa5bde3751f80172f28713ee78ebae4
                 </div>
+                <span class="causes-buttons">
+                  <br>
+                </span>
+                <br>
+                <button type="submit" (ngSubmit)="saveProfileInfo()" class="btn btn-danger btn-block">Submit</button>
+                <button type="submit" (click)="logout()" class="btn btn-info">Logout</button>
+                <div *ngIf="showProfileStuff">{{newEntry.name}}</div>
               </div>
             </div>
           </div>
         </div>
+      </div>
 
-        <!-- <div *ngIf = "showProfileStuff"> {{newEntry.age}} -->
-        <div class="col-sm-4">
-          <div class="row">
-            <div data-spy="scroll" class="tabbable-panel">
-              <div class="tabbable-line">
-                <div class="menu_title">Contact Info</div>
-                <div class="panel-body">
-                  <div class="col-lg-12">
-                    <div class="form-group">
-                      <h6 for="email">E-mail:</h6>
-                      <input [(ngModel)]="newEntry.email" name="email">
-                    </div>
-                    <div class="form-group">
-                      <h6 for="phone">Phone Number:</h6>
-                      <input [(ngModel)]="newEntry.phone" name="phone">
-                    </div>
-                    <div class="form-group">
-                      <h6 for="linkedin">Linkedin:</h6>
-                      <input [(ngModel)]="newEntry.linkedin" name="linkedin">
-                    </div>
-                    <div class="form-group">
-                      <h6 for="facebook">Facebook</h6>
-                      <input [(ngModel)]="newEntry.facebook" name="facebook">
-                    </div>
+      <!-- <div *ngIf = "showProfileStuff"> {{newEntry.age}} -->
+      <div class="col-sm-4">
+        <div class="row">
+          <div data-spy="scroll" class="tabbable-panel">
+            <div class="tabbable-line">
+              <div class="menu_title">Contact Info</div>
+              <div class="panel-body">
+                <div class="col-lg-12">
+                  <div class="form-group">
+                    <h6 for="email">E-mail:</h6>
+                    <input [(ngModel)]="newEntry.email" name="email">
+                  </div>
+                  <div class="form-group">
+                    <h6 for="phone">Phone Number:</h6>
+                    <input [(ngModel)]="newEntry.phone" name="phone">
+                  </div>
+                  <div class="form-group">
+                    <h6 for="linkedin">Linkedin:</h6>
+                    <input [(ngModel)]="newEntry.linkedin" name="linkedin">
+                  </div>
+                  <div class="form-group">
+                    <h6 for="facebook">Facebook</h6>
+                    <input [(ngModel)]="newEntry.facebook" name="facebook">
                   </div>
                 </div>
               </div>
@@ -110,11 +114,12 @@
         </div>
       </div>
     </div>
-  </form>
+  </div>
+</form>
 
 
-  
-  <a [routerLink]="['/login']"> login </a>
-  <a [routerLink]="['/signup']"> signup </a>
-  <a [routerLink]="['/profile']"> profile </a>
-  <a [routerLink]="['']"> home </a>
+
+<a [routerLink]="['/login']"> login </a>
+<a [routerLink]="['/signup']"> signup </a>
+<a [routerLink]="['/profile']"> profile </a>
+<a [routerLink]="['']"> home </a>
