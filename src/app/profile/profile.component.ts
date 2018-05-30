@@ -13,7 +13,7 @@ import 'rxjs/add/operator/toPromise';
   styleUrls: ['./profile.component.css']
 })
 export class ProfileComponent implements OnInit {
-
+  showProfileStuff: Boolean = false;
   // Profile info object to hold retrieved data.
   newEntry: ProfileInfo = {
     name: '',
@@ -80,10 +80,9 @@ export class ProfileComponent implements OnInit {
   }
 
   saveProfileInfo() {
-    var profileSaved = this.profileService.postEntries(this.newEntry);
-    console.log(profileSaved);
-    console.log(this.profileService);
-      profileSaved.subscribe(() => {
+    this.showProfileStuff = !this.showProfileStuff;
+    this.profileService.postEntries(this.newEntry)
+      .subscribe(() => {
         this.myRouter.navigate(['profile']);
       });
   }

@@ -21,7 +21,7 @@
           <label>Password</label>
         </div>
         <button (click)="login()" class="btn btn-success">Log In</button>
-        <button id="buttonlogintoregister" type="submit" class="btn btn-primary">Sign Up</button>
+        <button id="buttonlogintoregister" type="submit" (click)="loginRedirectToProfile()" class="btn btn-primary">Sign Up</button>
       </div>
     </form>
 
