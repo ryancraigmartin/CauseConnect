@@ -1,0 +1,92 @@
+/*========================================== DOTS INDICATOR ===========================================*/
+.owl-carousel .owl-item img {
+    display: block;
+    transform-style: preserve-3d;
+    width: auto;
+}
+
+.owl-dots .owl-dot{
+	display:inline-block;
+	width: 12px;
+	height: 12px;
+	margin: 0 7px;
+	filter: Alpha(Opacity=50);/*IE7 fix*/
+	opacity: 0.5;
+	-webkit-border-radius: 20px;
+	-moz-border-radius: 20px;
+	border-radius: 20px;
+}
+.owl-dots .owl-dot.active {
+	filter: Alpha(Opacity=100);/*IE7 fix*/
+	opacity: 1;
+}
+/*========================================== DOTS INDICATOR ===========================================*/
+
+/*========================================== ARROW INDICATOR ===========================================*/
+.owl-carousel .owl-dot, .owl-carousel .owl-nav .owl-next, .owl-carousel .owl-nav .owl-prev {
+    -moz-user-select: none;
+    cursor: pointer;
+}
+.owl-carousel .owl-prev {
+    left: 0;
+}
+.owl-carousel .owl-next, .owl-carousel .owl-prev {
+    background-color: rgba(254, 165, 1, 0.7);
+    border-radius: 0;
+    color: #ffffff;
+    font-size: 16px;
+    height: 30px;
+    line-height: 30px;
+    position: absolute;
+    text-align: center;
+    top: 40%;
+    width: 30px;
+}
+
+
+.owl-carousel .owl-next {
+    right: 0;
+}
+/*========================================== ARROW INDICATOR ===========================================*/
+
+/*========================================== VOLUNTEER ===========================================*/
+#owl-volunteer .owl-dots .owl-dot{background-color:#fea501;}
+#owl-volunteer .owl-dots{
+	padding-top:20px;
+	text-align: center;
+	position:relative;
+	left:0;
+	right:0;
+}
+/*========================================== VOLUNTEER ===========================================*/
+#owl-testimonial .item{
+    opacity: .5;
+    -webkit-transform: scale3d(0.7, 0.7, 1);
+    transform: scale3d(0.7, 0.7, 1);
+    -webkit-transition: all 0.3s ease-in-out;
+    -moz-transition: all 0.3s ease-in-out;
+    transition: all 0.3s ease-in-out;
+	pointer-events:none;
+}
+#owl-testimonial .owl-item.active.center .item{
+    opacity: 1;
+	 -webkit-transform: scale3d(1, 1, 1);
+    transform: scale3d(1, 1, 1);
+	pointer-events:auto;
+}
+#owl-partners .owl-dots .owl-dot{background-color:#fea501;}
+#owl-partners .owl-dots{
+	padding-top:20px;
+	text-align: center;
+	position:relative;
+	left:0;
+	right:0;
+}
+#owl-header .owl-dots .owl-dot{background-color:#fea501;}
+#owl-header .owl-dots{
+	bottom:30px;
+	text-align: center;
+	position:absolute;
+	left:0;
+	right:0;
+}

@@ -1,27 +1,37 @@
-<h2> Login to CauseConnect </h2>
-<form>
-  <div>
-    <div class="form-group">
-      <h4>Username: </h4>
-      <input type="text" class="form-control" [(ngModel)]="formInfo.username" name="username" id="login_username" placeholder="Username">
+<div class="example">
+  <div class="box transparent-modal modal-content">
+    <div id="header">
+      <div id="cont-lock">
+        <i class="material-icons lock fas fa-lock-open"></i>
+      </div>
+      <div id="bottom-head">
+        <h1 id="logintoregister">Login</h1>
+      </div>
     </div>
-    <div class="form-group">
-      <h4>Password: </h4>
-      <input type="password" class="form-control" [(ngModel)]="formInfo.password" name="password" id="login_password" placeholder="Password">
+    <form>
+      <div>
+        <div class="group">
+          <input type="text" class="inputMaterial" [(ngModel)]="formInfo.username" name="username" id="login_username" placeholder="Username">
+          <label>Username</label>
+        </div>
+        <div class="group">
+          <input type="password" class="inputMaterial" [(ngModel)]="formInfo.password" name="password" id="login_password" placeholder="Password">
+          <span class="highlight"></span>
+          <span class="bar"></span>
+          <label>Password</label>
+        </div>
+        <button (click)="login()" class="btn btn-success">Log In</button>
+        <button id="buttonlogintoregister" type="submit" (click)="loginRedirectToProfile()" class="btn btn-primary">Sign Up</button>
+      </div>
+    </form>
+
+    <div id="footer-box">
+      <p class="footer-text">Not a member?
+        <a [routerLink]="['/signup']" class="sign-up"> Sign up now</a>
+      </p>
     </div>
-    <button (click)="login()" class="btn btn-success">Log In</button>
   </div>
-</form>
-<p class="error"> {{ error }} </p>
 
-
-<div *ngIf="formInfo" style="background-color: chocolate">
-		<h2> You are now logged in as {{ formInfo.username }}!! </h2>
-		<p> Here's the user object </p>
-		<pre> {{ formInfo | json }} </pre>
-		<div>
-        <button (click)="getPrivateData()">getPrivateData</button>
-        <a routerLink="/profile/{{formInfo.username}}">Go to Profile page</a>
-        <button (click)="logout()">Log Out</button>
-		</div>
 </div>
+
+<p class="error"> {{ error }} </p>

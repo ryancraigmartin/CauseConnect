@@ -2,7 +2,32 @@
 
 Developed by [Brian Jaimes](https://github.com/B-riJ), [Kat Alderman](https://github.com/katalderman) and [Ryan Craig Martin](https://github.com/ryanmartin) in two weeks for the final project of the April-June 2018 Cohort at Ironhack, Miami.
 
-## Angular
+## Built With
+
+### Frontend
+
+- [Angular](https://angular.io/) 
+- [RxJS](http://reactivex.io/)
+- [Bootstrap](https://getbootstrap.com/docs/4.1/)
+
+### Backend
+
+- [express](https://expressjs.com/)
+- [express-session](https://github.com/expressjs/session#express-session)
+- [mongoDB](https://www.mongodb.com/)
+- [mongoose](http://mongoosejs.com/)
+- [passport](http://www.passportjs.org/)
+- [passport-local](https://github.com/jaredhanson/passport-local#passport-local)
+
+### Deployment
+
+- [Heroku](https://www.heroku.com/)
+
+## License
+
+#### [MIT](./LICENSE)
+
+## Project Info
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 6.0.1.
 
@@ -24,7 +49,7 @@ Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.
 
 ## Running end-to-end tests
 
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
+Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/). 
 
 ## Further help
 

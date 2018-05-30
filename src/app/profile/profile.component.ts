@@ -1,7 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 import { Observable } from 'rxjs/Observable';
+import { Router, ActivatedRoute } from '@angular/router';
 import { AuthService } from '../services/auth.service'; // Session Service
-import { Router } from '@angular/router';
+import { UserProfilesService } from '../services/userprofiles.service'; // Profile Service
+import { ProfileInfo } from './../interfaces/profile-info'; // ProfileInfo interface
+
 import 'rxjs/add/operator/toPromise';
 
 @Component({
@@ -11,6 +14,26 @@ import 'rxjs/add/operator/toPromise';
 })
 export class ProfileComponent implements OnInit {
 
+  // Shows or hides input fields depending on edit state.
+  showProfileForms: Boolean = false;
+
+  // Profile info object to hold retrieved data.
+  newEntry: ProfileInfo = {
+    name: '',
+    aboutUser: '',
+    age: '',
+    email: '',
+    phone: '',
+    facebook: '',
+    linkedin: '',
+    twitter: '',
+    volunteerExperience: '',
+    skills: ''
+    //   profileImage: '',
+    //   backgroundImage: '',
+  };
+
+  // Holds the session info for the user.
   formInfo: any = {
     username: '',
     password: ''
@@ -18,30 +41,66 @@ export class ProfileComponent implements OnInit {
 
   user: any;
   error: any;
-  privateData: any;
 
-  constructor (private myService: AuthService, private myRouter: Router) {}
+  // profileInfo: any;
+  entries: any[] = [];
 
-  ngOnInit() {
-    // this.myService.isLoggedIn()
-    // .toPromise()
-    // .then(  () => {
-    //     this.user = JSON.parse(this.myService.currentUser._body);
-    //     console.log('user in profile component: ', this.user);
-    // })
-    // .catch( err => {
-    //   console.log('Err in profile: ', err);
-    //   this.myRouter.navigate(['/login']);
-    // });
-    this.myService.isLoggedIn()
-    .toPromise()
-    .then(() => {
-      this.formInfo = this.myService.currentUser;
-      // console.log(this.formInfo); ===== Works !
-    })
-    .catch(err => {
-      console.log(err);
-      // this.myRouter.navigate(['/login']);
+  constructor(
+    private myService: AuthService,
+    private myRouter: Router,
+    private profileService: UserProfilesService,
+    private activatedRoute: ActivatedRoute) {
+    // console.log( profileService, myRouter );
+    // this.profileService = profileService;
+    // console.log(this.profileService);
+  }
+
+  editMode() {
+    this.showProfileForms = !this.showProfileForms;
+  }
+
+  getEntries() {
+    console.log('--- Getting the profile info ---');
+    this.profileService.getEntries()
+    .subscribe((profileEntries) => {
+      this.entries = profileEntries;
     });
   }
+
+  ngOnInit() {
+    this.getEntries();
+
+    this.myService.isLoggedIn()
+      .toPromise()
+      .then(() => {
+        this.formInfo = this.myService.currentUser;
+        // console.log(this.formInfo); ===== Works !
+      })
+      .catch(err => {
+        console.log(err);
+        // this.myRouter.navigate(['/login']);
+      });
+  }
+
+  logout() {
+    this.myService.logout()
+      .subscribe(
+        () => {
+          this.user = null;
+          this.formInfo = {};
+          this.myRouter.navigate(['/']);
+        },
+        (err) => this.error = err
+      );
+  }
+
+  saveProfileInfo() {
+    this.showProfileForms = !this.showProfileForms;
+    this.profileService.postEntries(this.newEntry)
+      .subscribe(() => {
+        this.myRouter.navigate(['profile']);
+      });
+  }
+
 }
+
