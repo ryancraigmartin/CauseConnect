@@ -6,10 +6,11 @@ export interface ProfileInfo {
         phone: String;
         facebook: String;
         linkedin: String;
+        twitter: String;
         // gender: String;
         volunteerExperience: String;
         // causes: String;
-        // skills: String;
+        skills: String;
         // profileImage: String;
         // backgroundImage: String;
 }

@@ -29,10 +29,8 @@ export class UserProfilesService {
   }
 
   getEntries() {
-    return this.http.get(
-      'http://localhost:3000/profile',
-      { withCredentials: true }
-    );
+    return this.http.get('http://localhost:3000/profile/userinfo')
+      .map((responseFromApi) => responseFromApi.json(), { withCredentials: true });
   }
 
   postEntries(entryFields: ProfileInfo) {

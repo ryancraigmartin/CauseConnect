@@ -13,7 +13,10 @@ import 'rxjs/add/operator/toPromise';
   styleUrls: ['./profile.component.css']
 })
 export class ProfileComponent implements OnInit {
-  showProfileStuff: Boolean = false;
+
+  // Shows or hides input fields depending on edit state.
+  showProfileForms: Boolean = false;
+
   // Profile info object to hold retrieved data.
   newEntry: ProfileInfo = {
     name: '',
@@ -23,7 +26,9 @@ export class ProfileComponent implements OnInit {
     phone: '',
     facebook: '',
     linkedin: '',
+    twitter: '',
     volunteerExperience: '',
+    skills: ''
     //   profileImage: '',
     //   backgroundImage: '',
   };
@@ -50,10 +55,20 @@ export class ProfileComponent implements OnInit {
     // console.log(this.profileService);
   }
 
+  editMode() {
+    this.showProfileForms = !this.showProfileForms;
+  }
+
+  getEntries() {
+    console.log('--- Getting the profile info ---');
+    this.profileService.getEntries()
+    .subscribe((profileEntries) => {
+      this.entries = profileEntries;
+    });
+  }
+
   ngOnInit() {
-
-
-    this.profileService.getEntries();
+    this.getEntries();
 
     this.myService.isLoggedIn()
       .toPromise()
@@ -80,13 +95,12 @@ export class ProfileComponent implements OnInit {
   }
 
   saveProfileInfo() {
-    this.showProfileStuff = !this.showProfileStuff;
+    this.showProfileForms = !this.showProfileForms;
     this.profileService.postEntries(this.newEntry)
       .subscribe(() => {
         this.myRouter.navigate(['profile']);
       });
   }
-
 
 }
 
