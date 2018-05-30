@@ -53,11 +53,13 @@ import 'rxjs/add/operator/toPromise';
     //     (user) =>  this.user = JSON.parse(this.myService.currentUser._body),
     //     (err) => this.error = err
     //   );
-    this.myService.login(this.formInfo)
+    this.myService
+      .login(this.formInfo)
       .subscribe(
-        (user) =>  this.user = user,
-        (err) => this.error = err
+        user => (this.user = user),
+        err => (this.error = err)
       );
+      this.myRouter.navigate(['profile']);
   }
 
   logout() {
