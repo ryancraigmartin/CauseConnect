@@ -72,6 +72,9 @@ import 'rxjs/add/operator/toPromise';
       );
   }
 
+  loginRedirectToProfile() {
+    this.myRouter.navigateByUrl('/profile');
+}
   // getPrivateData() {
   //   this.myService.getPrivateData()
   //   .subscribe(() => console.log("====================", JSON.parse(this.myService.currentUser._body).username),

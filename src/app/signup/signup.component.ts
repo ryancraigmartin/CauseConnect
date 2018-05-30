@@ -2,8 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { Observable } from 'rxjs/Observable';
 import { AuthService } from '../services/auth.service';
 import { ActivatedRoute } from '@angular/router';
-// import { HttpModule } from '@angular/http';
-// import { Http, Response } from '@angular/http';
+import { HttpModule } from '@angular/http';
+import { Http, Response } from '@angular/http';
 
 @Component({
   selector: 'app-signup',
@@ -22,14 +22,16 @@ export class SignupComponent implements OnInit {
 
 user: any;
 error: any;
-title = 'app'; // ?
+// title = 'app'; // ?
 
 signup() {
+  console.log('----');
   console.log(this.formInfo);
   this.myService.signup(this.formInfo)
   .subscribe(
     (user)  => {this.user = user;
-      console.log(this.user);
+      console.log('Inside subscribe!');
+      console.log(this.formInfo);
     },
       (err) => this.error = err
     );
@@ -40,7 +42,6 @@ ngOnInit() {
   .toPromise()
   .then(() => {
     this.formInfo = this.myService.currentUser;
-    // console.log(this.formInfo); ===== Works !
   })
   .catch(err => {
     console.log(err);

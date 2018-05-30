@@ -28,7 +28,7 @@ import { LoginComponent } from '../login/login.component';
 // }
 
 @Component({
-  selector: 'modal-component',
+  selector: 'app-modal-component',
   templateUrl: 'modal.component.html'
 })
 

@@ -27,7 +27,7 @@ export class UserProfilesService {
       })
       .catch(this.handleError);
   }
-  
+
   getEntries() {
     return this.http.get(
       'http://localhost:3000/profile',
