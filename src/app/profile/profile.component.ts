@@ -33,6 +33,21 @@ export class ProfileComponent implements OnInit {
     //   backgroundImage: '',
   };
 
+  profileEntries: ProfileInfo = {
+    name: '',
+    aboutUser: '',
+    age: '',
+    email: '',
+    phone: '',
+    facebook: '',
+    linkedin: '',
+    twitter: '',
+    volunteerExperience: '',
+    skills: ''
+    //   profileImage: '',
+    //   backgroundImage: '',
+  };
+
   // Holds the session info for the user.
   formInfo: any = {
     username: '',
@@ -59,21 +74,24 @@ export class ProfileComponent implements OnInit {
     this.showProfileForms = !this.showProfileForms;
   }
 
-  getEntries() {
+  getEntries(theUserID) {
     console.log('--- Getting the profile info ---');
-    this.profileService.getEntries()
+    this.profileService.getEntries(theUserID)
     .subscribe((profileEntries) => {
-      this.entries = profileEntries;
+      console.log('+++++++++++++');
+      this.profileEntries = profileEntries[0];
+      console.log(this.profileEntries);
+
     });
   }
 
   ngOnInit() {
-    this.getEntries();
-
     this.myService.isLoggedIn()
-      .toPromise()
-      .then(() => {
-        this.formInfo = this.myService.currentUser;
+    .toPromise()
+    .then(() => {
+      console.log(this.myService.currentUser._id)
+      this.formInfo = this.myService.currentUser;
+      this.getEntries(this.myService.currentUser._id);
         // console.log(this.formInfo); ===== Works !
       })
       .catch(err => {
