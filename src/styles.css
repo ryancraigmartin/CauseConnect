@@ -1,1 +1,10 @@
 /* You can add global styles to this file, and also import other style files */
+@import url("node_modules/bootstrap/dist/css/bootstrap.min.css");
+@import url("node_modules/font-awesome/css/font-awesome.css");
+@import url("src/css/vendor/font-awesome/css/font-awesome.min.css");
+@import url("src/css/vendor/bootstrap.min.css");
+@import url("src/css/vendor/owl-carousel/owl.carousel.min.css");
+@import url("src/css/vendor/owl-carousel/owl.theme.css");
+@import url("src/css/vendor/verticalcarousel/jquery.verticalcarousel.css");
+@import url("src/css/vendor/menu_animate/animate.min.css");
+@import url("src/css/style.css");
