@@ -17,7 +17,8 @@ export class SignupComponent implements OnInit {
   formInfo: any = {
     username: '',
     password: '',
-    email: ''
+    email: '',
+    causes:''
   };
 
 user: any;
