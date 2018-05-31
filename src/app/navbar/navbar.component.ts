@@ -25,10 +25,9 @@ export class NavbarComponent implements OnInit {
 
   ngOnInit() {
     this.myService.isLoggedIn()
-    .toPromise()
     .then(() => {
       this.formInfo = this.myService.currentUser;
-      // console.log(this.formInfo); ===== Works !
+      console.log('this.formInfo in nav bar --> ', this.formInfo);
     })
     .catch(err => {
       console.log(err);

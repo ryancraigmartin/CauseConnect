@@ -80,7 +80,7 @@
                   <br>
                   <button type="submit" (ngSubmit)="saveProfileInfo()" class="btn btn-danger">Submit</button>
                   <button type="submit" (click)="editMode()" class="btn btn-primary">Return</button>
-                  <button type="submit" (click)="logout()" class="btn btn-info">Logout</button>
+                  <!-- <button type="submit" (click)="logout()" class="btn btn-info">Logout</button> -->
                 </div>
               </div>
             </div>
@@ -197,7 +197,9 @@
 
                   <br>
                   <button *ngIf="!showProfileForms" type="submit" (click)="editMode()" class="btn btn-primary">Edit</button>
-                  <button type="submit" (click)="logout()" class="btn btn-info">Logout</button>
+                  <br><br><br>
+
+                  <div *ngIf="user"><button type="button" (click)="logout()" class="btn btn-info">Logout</button></div>
                 </div>
               </div>
             </div>
@@ -239,7 +241,13 @@
       </div>
     </div>
   </form>
-</div>
+
+  <!-- <br>
+                  <button *ngIf="!showProfileForms" type="submit" (click)="editMode()" class="btn btn-primary">Edit</button>
+                  <br><br><br>
+
+                  <div *ngIf="formInfo.username"><button type="button" (click)="logout()" class="btn btn-info">Logout</button></div>
+</div> -->
 <!-- END Populated profile info -->
 
 <a [routerLink]="['/login']"> login </a>

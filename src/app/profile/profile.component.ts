@@ -5,9 +5,8 @@ import { FormsModule, ReactiveFormsModule, FormControl  } from '@angular/forms';
 import { AuthService } from '../services/auth.service'; // Session Service
 import { UserProfilesService } from '../services/userprofiles.service'; // Profile Service
 import { ProfileInfo } from './../interfaces/profile-info'; // ProfileInfo interface
-
-
 import 'rxjs/add/operator/toPromise';
+
 
 @Component({
   selector: 'app-profile',
@@ -73,7 +72,6 @@ export class ProfileComponent implements OnInit {
     // this.profileService = profileService;
     // console.log(this.profileService);
   }
-  
 
   editMode() {
     this.showProfileForms = !this.showProfileForms;
@@ -92,52 +90,50 @@ export class ProfileComponent implements OnInit {
   // }
 
   getEntries(theUserID) {
-    console.log('--- Getting the profile info ---');
     this.profileService.getEntries(theUserID)
     .subscribe((profileEntries) => {
-      console.log('+++++++++++++');
       this.profileEntries = profileEntries[0];
       this.newEntry = profileEntries[0];
-      console.log(this.profileEntries);
-
     });
   }
 
   ngOnInit() {
-
-
-
-    this.myService.isLoggedIn()
-    .toPromise()
-    .then(() => {
-      console.log(this.myService.currentUser._id)
+    this.myService.isLoggedIn();
+    // .then(() => {
+      this.myService.currentUser.subscribe(theUser => this.user = theUser);
+      // console.log('---currentuser_id in ngoninit in profile component---');
+      // console.log(this.myService.currentUser._id);
       this.formInfo = this.myService.currentUser;
-      this.getEntries(this.myService.currentUser._id);
+      this.getEntries(this.user._id);
         // console.log(this.formInfo); ===== Works !
-      })
-      .catch(err => {
-        console.log(err);
-        // this.myRouter.navigate(['/login']);
-      });
+      // })
+      // .catch(err => {
+      //   console.log(err);
+      //   this.myRouter.navigate(['/login']);
+      //   // this.myRouter.navigate(['/login']);
+      // });
   }
 
   logout() {
     this.myService.logout()
-      .subscribe(
-        () => {
-          this.user = null;
+    .then(() => {
+        // console.log('!!!!!!!!!!Call to logout!!!!!!!!!!!');
+        // console.log('-------------------------------------');
+        // console.log('currentuser -->', this.myService.currentUser);
+        // this.user = null;
+        // console.log('-------------------------------------');
+        //   console.log('this.user -->', this.user);
           this.formInfo = {};
-          this.myRouter.navigate(['/']);
-        },
-        (err) => this.error = err
-      );
+          this.myRouter.navigate(['/login']);
+        })
+        .catch(err => console.log('err in logout: ', err));
   }
 
   saveProfileInfo() {
     this.showProfileForms = !this.showProfileForms;
     this.profileService.postEntries(this.newEntry)
       .subscribe(() => {
-        this.myRouter.navigate(['profile']);
+        this.myRouter.navigate(['/profile']);
       });
   }
 

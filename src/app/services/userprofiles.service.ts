@@ -18,24 +18,24 @@ export class UserProfilesService {
     return Observable.throw(e.json().message);
   }
 
-  isLoggedIn() {
-    return this.http.get(`http://localhost:3000/api/loggedin`, {withCredentials: true})
-      .map(res => {
-        this.currentUser = res.json();
-        console.log('User Session: ', res);
-        res.json();
-      })
-      .catch(this.handleError);
-  }
+  // isLoggedIn() {
+  //   return this.http.get(`http://localhost:3000/api/loggedin`, {withCredentials: true})
+  //     .map(res => {
+  //       this.currentUser = res.json();
+  //       console.log('User Session: ', res);
+  //       res.json();
+  //     })
+  //     .catch(this.handleError);
+  // }
 
   getEntries(theUserID) {
-    return this.http.get('http://localhost:3000/profile/userinfo/' + theUserID)
-      .map((responseFromApi) => responseFromApi.json(), { withCredentials: true });
+    return this.http.get('http://localhost:3000/profile/userinfo/' + theUserID, { withCredentials: true })
+      .map((responseFromApi) => responseFromApi.json());
   }
 
   postEntries(entryFields: ProfileInfo) {
     return this.http.post(
-      'http://localhost:3000/profile/edit',
+      'http://localhost:3000/profile/edit/',
       entryFields,
       { withCredentials: true }
     );
