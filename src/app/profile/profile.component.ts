@@ -95,12 +95,13 @@ export class ProfileComponent implements OnInit {
     this.profileService.getEntries(theUserID)
     .subscribe((profileEntries) => {
       console.log('+++++++++++++');
+      console.log(profileEntries);
       this.profileEntries = profileEntries[0];
       if (profileEntries[0]) {
         this.newEntry = profileEntries[0];
       }
 
-      console.log(this.profileEntries);
+
 
     });
   }
