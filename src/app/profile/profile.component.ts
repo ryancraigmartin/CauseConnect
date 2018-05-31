@@ -73,7 +73,6 @@ export class ProfileComponent implements OnInit {
     // this.profileService = profileService;
     // console.log(this.profileService);
   }
-  
 
   editMode() {
     this.showProfileForms = !this.showProfileForms;
@@ -97,7 +96,10 @@ export class ProfileComponent implements OnInit {
     .subscribe((profileEntries) => {
       console.log('+++++++++++++');
       this.profileEntries = profileEntries[0];
-      this.newEntry = profileEntries[0];
+      if (profileEntries[0]) {
+        this.newEntry = profileEntries[0];
+      }
+
       console.log(this.profileEntries);
 
     });
@@ -110,7 +112,7 @@ export class ProfileComponent implements OnInit {
     this.myService.isLoggedIn()
     .toPromise()
     .then(() => {
-      console.log(this.myService.currentUser._id)
+      console.log(this.myService.currentUser._id);
       this.formInfo = this.myService.currentUser;
       this.getEntries(this.myService.currentUser._id);
         // console.log(this.formInfo); ===== Works !
@@ -135,6 +137,8 @@ export class ProfileComponent implements OnInit {
 
   saveProfileInfo() {
     this.showProfileForms = !this.showProfileForms;
+    console.log(this.newEntry);
+    // const self = this;
     this.profileService.postEntries(this.newEntry)
       .subscribe(() => {
         this.myRouter.navigate(['profile']);
