@@ -28,11 +28,9 @@ export class UserProfilesService {
       .catch(this.handleError);
   }
 
-  getEntries() {
-    return this.http.get(
-      'http://localhost:3000/profile',
-      { withCredentials: true }
-    );
+  getEntries(theUserID) {
+    return this.http.get('http://localhost:3000/profile/userinfo/' + theUserID)
+      .map((responseFromApi) => responseFromApi.json(), { withCredentials: true });
   }
 
   postEntries(entryFields: ProfileInfo) {

@@ -13,6 +13,7 @@ import { ProfileComponent } from './profile/profile.component';
 import { NotFoundComponent } from './not-found/not-found.component';
 import { NavbarComponent } from './navbar/navbar.component';
 import { FooterComponent } from './footer/footer.component';
+import { NonProfitsComponent } from './non-profits/non-profits.component';
 import { AuthService } from './services/auth.service';
 import { UserProfilesService } from './services/userprofiles.service';
 import { ModalComponent } from './modal/modal.component';
@@ -59,7 +60,8 @@ const routes: Routes = [
     NotFoundComponent,
     NavbarComponent,
     FooterComponent,
-    ModalComponent
+    ModalComponent,
+    NonProfitsComponent
   ],
 
   imports: [

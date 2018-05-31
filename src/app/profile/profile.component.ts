@@ -13,7 +13,10 @@ import 'rxjs/add/operator/toPromise';
   styleUrls: ['./profile.component.css']
 })
 export class ProfileComponent implements OnInit {
-  showProfileStuff: Boolean = false;
+
+  // Shows or hides input fields depending on edit state.
+  showProfileForms: Boolean = false;
+
   // Profile info object to hold retrieved data.
   newEntry: ProfileInfo = {
     name: '',
@@ -23,7 +26,24 @@ export class ProfileComponent implements OnInit {
     phone: '',
     facebook: '',
     linkedin: '',
+    twitter: '',
     volunteerExperience: '',
+    skills: ''
+    //   profileImage: '',
+    //   backgroundImage: '',
+  };
+
+  profileEntries: ProfileInfo = {
+    name: '',
+    aboutUser: '',
+    age: '',
+    email: '',
+    phone: '',
+    facebook: '',
+    linkedin: '',
+    twitter: '',
+    volunteerExperience: '',
+    skills: ''
     //   profileImage: '',
     //   backgroundImage: '',
   };
@@ -50,15 +70,28 @@ export class ProfileComponent implements OnInit {
     // console.log(this.profileService);
   }
 
+  editMode() {
+    this.showProfileForms = !this.showProfileForms;
+  }
+
+  getEntries(theUserID) {
+    console.log('--- Getting the profile info ---');
+    this.profileService.getEntries(theUserID)
+    .subscribe((profileEntries) => {
+      console.log('+++++++++++++');
+      this.profileEntries = profileEntries[0];
+      console.log(this.profileEntries);
+
+    });
+  }
+
   ngOnInit() {
-
-
-    this.profileService.getEntries();
-
     this.myService.isLoggedIn()
-      .toPromise()
-      .then(() => {
-        this.formInfo = this.myService.currentUser;
+    .toPromise()
+    .then(() => {
+      console.log(this.myService.currentUser._id)
+      this.formInfo = this.myService.currentUser;
+      this.getEntries(this.myService.currentUser._id);
         // console.log(this.formInfo); ===== Works !
       })
       .catch(err => {
@@ -80,13 +113,12 @@ export class ProfileComponent implements OnInit {
   }
 
   saveProfileInfo() {
-    this.showProfileStuff = !this.showProfileStuff;
+    this.showProfileForms = !this.showProfileForms;
     this.profileService.postEntries(this.newEntry)
       .subscribe(() => {
         this.myRouter.navigate(['profile']);
       });
   }
-
 
 }
 
