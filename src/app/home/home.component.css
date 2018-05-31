@@ -25,3 +25,11 @@
   height: 130px;
   width: 100%;
 }
+
+/* .header-bgimage {
+  background-image: url("../assets/images/Organizations-student-drive.jpg");
+} */
+.header-bgimage {
+  /* background-image: url(/assets/images/Organizations-student-drive.jpg); */
+  /* background-image: url(/assets/images/T-JaWuan-James.jpg); */
+}
