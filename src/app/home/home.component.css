@@ -30,6 +30,10 @@
   background-image: url("../assets/images/Organizations-student-drive.jpg");
 } */
 .header-bgimage {
-  /* background-image: url(/assets/images/Organizations-student-drive.jpg); */
+  background-image: url(/assets/images/organizations-student-drive.jpg);
   /* background-image: url(/assets/images/T-JaWuan-James.jpg); */
 }
+/* CTA start */
+/* .cta-bgimage {
+  background-image: url(cta_bgimage.jpg);
+} */
