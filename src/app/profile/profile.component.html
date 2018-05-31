@@ -11,7 +11,7 @@
   </div>
 </div>
 <!-- edit button -> showProfileForms -->
-<div *ngIf="showProfileForms"> 
+<div *ngIf="showProfileForms">
   <form id="nameform" (ngSubmit)="saveProfileInfo()">
     <div class="container">
       <div class="row">
@@ -28,9 +28,9 @@
               </ul>
               <div class="tab-content">
                 <div class="tab-pane active" id="tab_default_1">
-                  <h4>Full Name</h4>
-                  <input value="{{newEntry.name}}" id="name" [(ngModel)]="newEntry.name" name="name">
-                  <h4>Age</h4>
+                  <h4 id="input-spacing" id="input-spacing">Full Name</h4>
+                  <input id="name" [(ngModel)]="newEntry.name" name="name">
+                  <h4 id="input-spacing">Age</h4>
                   <input id="age" [(ngModel)]="newEntry.age" name="age">
                   <!-- <div class="dropdown show">
                       <a class="btn btn-secondary dropdown-toggle" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Gender
@@ -41,14 +41,18 @@
                         <a class="dropdown-item">PREFER NOT TO SAY</a>
                       </div>
                     </div> -->
-                  <h4>Background </h4>
-                  <textarea id="aboutUser-text" [(ngModel)]="newEntry.aboutUser" name="aboutUser" rows="4" cols="50"></textarea>
-                  <h4>Volunteer Experience</h4>
-                  <textarea id="volunteerExperience-text" [(ngModel)]="newEntry.volunteerExperience" name="volunteerExperience" rows="4" cols="50"></textarea>
-                  <h4>Skills</h4>
+                  <h4 id="input-spacing">Background </h4>
+                  <textarea id="aboutUser-text" [(ngModel)]="newEntry.aboutUser" name="aboutUser" rows="4" cols="65" value="profileEntries.aboutUser"></textarea>
+                  <h4 id="input-spacing">Volunteer Experience</h4>
+                  <textarea id="volunteerExperience-text" [(ngModel)]="newEntry.volunteerExperience" name="volunteerExperience" rows="4" cols="65"
+                    value="profileEntries.volunteerExperience"></textarea>
+                  <h4 id="input-spacing">Skills</h4>
                   <input id="skills-text" [(ngModel)]="newEntry.skills" name="skills">
-                  <h4>Causes</h4>
-  
+                  <h4 id="input-spacing">Causes</h4>
+                  <span class="causes-buttons">
+                    <br>
+                  </span>
+
                   <!-- 
                   <div>
                     <label class="switch">Community
@@ -56,7 +60,7 @@
                       <span class="slider round">Community</span>
                     </label>
                   </div> -->
-  
+
                   <!-- <div class="row">
                         <div class="col">left column </div>
                         <div class="col">
@@ -73,13 +77,9 @@
                             <span class="slider round"></span>
                           </label>
                         </div> -->
-  
-                  <span class="causes-buttons">
-                    <br>
-                  </span>
                   <br>
-                  <button type="submit" (ngSubmit)="saveProfileInfo()" class="btn btn-danger">Submit</button>                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                               
-                  <button type="submit" (click)="editMode()" class="btn btn-primary">Edit</button>
+                  <button type="submit" (ngSubmit)="saveProfileInfo()" class="btn btn-danger">Submit</button>
+                  <button type="submit" (click)="editMode()" class="btn btn-primary">Return</button>
                   <button type="submit" (click)="logout()" class="btn btn-info">Logout</button>
                 </div>
               </div>
@@ -94,24 +94,24 @@
                 <div class="panel-body">
                   <div class="col-lg-12">
                     <div class="form-group">
-                      <h4 for="email">E-mail:</h4>
-                      <input [(ngModel)]="newEntry.email" name="email">
+                      <h4 id="input-spacing" for="email">E-mail:</h4>
+                      <input [(ngModel)]="newEntry.email" name="email" value="profileEntries.email">
                     </div>
                     <div class="form-group">
-                      <h4 for="phone">Phone Number:</h4>
-                      <input [(ngModel)]="newEntry.phone" name="phone">
+                      <h4 id="input-spacing" for="phone">Phone Number:</h4>
+                      <input [(ngModel)]="newEntry.phone" name="phone" value="profileEntries.email">
                     </div>
                     <div class="form-group">
-                      <h4 for="linkedin">Linkedin:</h4>
-                      <input [(ngModel)]="newEntry.linkedin" name="linkedin">
+                      <h4 id="input-spacing" for="linkedin">Linkedin:</h4>
+                      <input [(ngModel)]="newEntry.linkedin" name="linkedin" value="profileEntries.linkedin">
                     </div>
                     <div class="form-group">
-                      <h4 for="facebook">Facebook</h4>
-                      <input [(ngModel)]="newEntry.facebook" name="facebook">
+                      <h4 id="input-spacing" for="facebook">Facebook</h4>
+                      <input [(ngModel)]="newEntry.facebook" name="facebook" value="profileEntries.facebook">
                     </div>
                     <div class="form-group">
-                      <h4 for="twitter">Twitter</h4>
-                      <input [(ngModel)]="newEntry.twitter" name="twitter">
+                      <h4 id="input-spacing" for="twitter">Twitter</h4>
+                      <input [(ngModel)]="newEntry.twitter" name="twitter" value="profileEntries.twitter">
                     </div>
                   </div>
                 </div>
@@ -122,11 +122,15 @@
       </div>
     </div>
   </form>
-</div> <!-- END edit button -> showProfileForms -->
+</div>
+<!-- END edit button -> showProfileForms -->
 
+<!-- ======================================================================= -->
+<!-- Ngif form divider -->
+<!-- ======================================================================= -->
 
 <!-- Populated profile info -->
-<div *ngIf="!showProfileForms"> 
+<div *ngIf="!showProfileForms">
   <form id="nameform" (ngSubmit)="saveProfileInfo()">
     <div class="container">
       <div class="row">
@@ -163,15 +167,17 @@
                   <h4>Skills</h4>
                   <p id="skills-text" name="skills">{{profileEntries.skills}}</p>
                   <h4>Causes</h4>
-  
-                  <!-- 
-                  <div>
+                  <span class="causes-buttons">
+                    <br>
+                  </span>
+
+                  <!-- <div>
                     <label class="switch">Community
-                      <input type="checkbox">
+                      <input type="checkbox" ng-controller="communitySwitch">
                       <span class="slider round">Community</span>
                     </label>
                   </div> -->
-  
+
                   <!-- <div class="row">
                         <div class="col">left column </div>
                         <div class="col">
@@ -188,11 +194,10 @@
                             <span class="slider round"></span>
                           </label>
                         </div> -->
-  
-                  <span class="causes-buttons">
-                    <br>
-                  </span>
+
                   <br>
+                  <button *ngIf="!showProfileForms" type="submit" (click)="editMode()" class="btn btn-primary">Edit</button>
+                  <button type="submit" (click)="logout()" class="btn btn-info">Logout</button>
                 </div>
               </div>
             </div>
@@ -234,10 +239,8 @@
       </div>
     </div>
   </form>
-</div> <!-- END Populated profile info -->
-
-<button *ngIf="!showProfileForms" type="submit" (click)="editMode()" class="btn btn-primary">Edit</button>
-<button type="submit" (click)="logout()" class="btn btn-info">Logout</button>
+</div>
+<!-- END Populated profile info -->
 
 <a [routerLink]="['/login']"> login </a>
 <a [routerLink]="['/signup']"> signup </a>
