@@ -22,16 +22,15 @@ export class NotFoundComponent implements OnInit {
   constructor(private myService: AuthService, private myRouter: Router) { }
 
   ngOnInit() {
-    this.myService.isLoggedIn()
-    .toPromise()
-    .then(  () => {
-        this.user = JSON.parse(this.myService.currentUser._body);
-        console.log('user in profile component: ', this.user);
-    })
-    .catch( err => {
-      console.log('Err in profile: ', err);
-      this.myRouter.navigate(['/login']);
-    });
+    // this.myService.isLoggedIn()
+    // .then(  () => {
+    //     this.user = JSON.parse(this.myService.currentUser._body);
+    //     console.log('user in profile component: ', this.user);
+    // })
+    // .catch( err => {
+    //   console.log('Err in profile: ', err);
+    //   this.myRouter.navigate(['/login']);
+    // });
   }
 
 }

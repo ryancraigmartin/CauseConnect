@@ -12,19 +12,16 @@
           <a class="nav-link" [routerLink]="['']">Home</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" [routerLink]="['/profile']">Profile</a>
-        </li>
-        <li class="nav-item">
           <a class="nav-link" [routerLink]="['/login']">Login</a>
         </li>
         <li class="nav-item">
           <a class="nav-link" [routerLink]="['/signup']">Signup</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" [routerLink]="['/organizations']">Organizations</a>
+          <a class="nav-link" [routerLink]="['/profile']">Profile</a>
         </li>
-        <li *ngIf="formInfo" class="nav-item">
-          <a class="nav-link" [routerLink]="['/profile']">My Profile</a>
+        <li class="nav-item">
+          <a class="nav-link" [routerLink]="['/organizations']">Organizations</a>
         </li>
       </ul>
       <form class="form-inline mt-2 mt-md-0">

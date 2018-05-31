@@ -9,19 +9,17 @@ import 'rxjs/add/operator/toPromise';
   templateUrl: './login.component.html',
   styleUrls: ['./login.component.css']
 })
-
-  export class LoginComponent implements OnInit {
-
-    formInfo: any = {
-      username: '',
-      password: ''
-    };
+export class LoginComponent implements OnInit {
+  formInfo = {
+    username: '',
+    password: ''
+  };
 
   user: any;
   error: any;
   privateData: any;
 
-  constructor (private myService: AuthService, private myRouter: Router) {}
+  constructor(private myService: AuthService, private myRouter: Router) {}
 
   ngOnInit() {
     // this.myService.isLoggedIn()
@@ -35,16 +33,29 @@ import 'rxjs/add/operator/toPromise';
     //   this.myRouter.navigate(['/login']);
     // });
 
-    this.myService.isLoggedIn()
-      .toPromise()
-      .then(() => {
-        this.formInfo = this.myService.currentUser;
-        // console.log(this.formInfo); ===== Works !
-      })
-      .catch(err => {
-        console.log(err);
-        // this.myRouter.navigate(['/login']);
+    this.myService
+      .isLoggedIn()
+
+      this.myService.currentUser
+      .subscribe((theUser) => {
+        this.user = theUser;
+        console.log('in loggedin function in login component user is', theUser);
       });
+
+      // .then(() => {
+        // if (this.myService.currentUser !== null) {
+          // this.user = this.myService.currentUser;
+          // console.log('ngoninit in login: ', this.myService.currentUser);
+          // this.myRouter.navigate(['/profile']);
+
+        // } else {
+          // this.myRouter.navigate(['/login']);
+        // }
+      // })
+      // .catch(err => {
+      //   console.log(err);
+      //   // this.myRouter.navigate(['/login']);
+      // });
   }
 
   login() {
@@ -55,28 +66,40 @@ import 'rxjs/add/operator/toPromise';
     //   );
     this.myService
       .login(this.formInfo)
-      .subscribe(
-        user => (this.user = user),
-        err => (this.error = err)
-      );
-      this.myRouter.navigate(['profile']);
+      .subscribe(() => {
+      this.myService.currentUser
+      .subscribe((theUser) => {
+        this.user = theUser;
+        console.log('user in the login component after running login function', theUser);
+        this.myRouter.navigate(['/profile']);
+
+      });
+
+    });
+      // .toPromise()
+      // .subscribe(() => {
+      //   this.user = user;
+      //   console.log('user in login comp: ', this.user);
+      //   this.myRouter.navigate(['/profile']);
+      // });
+      // .catch(err => (this.error = err));
   }
 
   logout() {
-    this.myService.logout()
-      .subscribe(
-        () => {
-          this.user = null;
-          this.formInfo = {};
-          this.myRouter.navigate(['/']);
-        },
-        (err) => this.error = err
-      );
+    this.myService
+      .logout()
+      // .then(() => {
+        // this.user = null;
+        // this.formInfo = {};
+        this.formInfo = null;
+        this.myRouter.navigate(['/']);
+      // })
+      // .catch(err => (this.error = err));
   }
 
   loginRedirectToProfile() {
     this.myRouter.navigateByUrl('/profile');
-}
+  }
   // getPrivateData() {
   //   this.myService.getPrivateData()
   //   .subscribe(() => console.log("====================", JSON.parse(this.myService.currentUser._body).username),

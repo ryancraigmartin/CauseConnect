@@ -4,13 +4,13 @@ import 'rxjs/add/operator/map';
 import 'rxjs/add/operator/catch';
 import 'rxjs/add/operator/toPromise';
 import { Observable } from 'rxjs/Rx';
-
+import {BehaviorSubject } from 'rxjs';
 @Injectable()
 export class AuthService {
 
   constructor(private http: Http) { }
 
-  currentUser: any;
+  currentUser: BehaviorSubject<string> = new BehaviorSubject(null);
   // formInfo: any = {
   //   username: '',
   //   password: ''
@@ -26,37 +26,50 @@ export class AuthService {
 
   signup(user) {
     return this.http.post(`http://localhost:3000/api/signup`, user, {withCredentials: true})
-      .map(res => {console.log(res), res.json()})
+      .map(res => {console.log(res), res.json(); } )
       .catch(this.handleError);
   }
 
   login(user) {
     return this.http.post(`http://localhost:3000/api/login`, user, {withCredentials: true})
-      .map(res => {this.currentUser = res, console.log(res), res.json()})
+      .map(res => {
+        this.currentUser.next(res.json());
+        res.json();
+      } )
       .catch(this.handleError);
   }
 
   logout() {
-    return this.http.delete(`http://localhost:3000/api/logout`, {withCredentials: true})
-      .map(res => res.json())
-      .catch(this.handleError);
+    this.currentUser.next(null);
+    return this.http.post(`http://localhost:3000/api/logout`, {}, {withCredentials: true})
+    .toPromise()
+    .then((res) => {
+        console.log('THIS CURRENT USER', this.currentUser);
+        sessionStorage.clear();
+        console.log('THIS CURRENT USER SHOULD BE NULL', this.currentUser);
+        res.json();
+      });
+      // .catch(err => {
+      //   console.log('err in service logout: ', err);
+      // });
   }
 
   isLoggedIn() {
     return this.http.get(`http://localhost:3000/api/loggedin`, {withCredentials: true})
-      .map(res => {
-        this.currentUser = res.json();
-        console.log('User Session: ', res);
+    .toPromise()
+      .then(res => {
+        this.currentUser.next(res.json());
+        console.log('User in islogged in service: ', this.currentUser);
         res.json();
       })
       .catch(this.handleError);
   }
 
-  getPrivateData() {
-    return this.http.get(`http://localhost:3000/api/private`, {withCredentials: true})
-      .map(res => {console.log('Hello: ', res), res.json()})
-      .catch(this.handleError);
-  }
+  // getPrivateData() {
+  //   return this.http.get(`http://localhost:3000/api/private`, {withCredentials: true})
+  //     .map(res => {console.log('Hello: ', res), res.json()})
+  //     .catch(this.handleError);
+  // }
 
   getUser() {
     return this.http.get(`http://localhost:3000/api/userInfo`, { withCredentials: true })
