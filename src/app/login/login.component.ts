@@ -4,10 +4,12 @@ import { AuthService } from '../services/auth.service'; // Session Service
 import { Router } from '@angular/router';
 import 'rxjs/add/operator/toPromise';
 
+
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
-  styleUrls: ['./login.component.css']
+  styleUrls: ['./login.component.css'],
+  // directives: [ROUTER_DIRECTIVES, Modal]
 })
 
   export class LoginComponent implements OnInit {
@@ -77,9 +79,4 @@ import 'rxjs/add/operator/toPromise';
   loginRedirectToProfile() {
     this.myRouter.navigateByUrl('/profile');
 }
-  // getPrivateData() {
-  //   this.myService.getPrivateData()
-  //   .subscribe(() => console.log("====================", JSON.parse(this.myService.currentUser._body).username),
-  //   err => console.log(err));
-  // }
-}
+  }
