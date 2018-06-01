@@ -3,6 +3,7 @@
 // import { NgbModal, NgbActiveModal } from '@ng-bootstrap/ng-bootstrap';
 
 // import { LoginComponent } from '../login/login.component';
+// import { SignupComponent } from '../signup/signup.component';
 
 // // @Component({
 // //   selector: 'modal-content',
@@ -39,4 +40,14 @@
 //     const modalRef = this.modalService.open(LoginComponent);
 //     modalRef.componentInstance.name = 'World';
 //   }
+// }
+  // open() {
+  //   const modalRef = this.modalService.open(LoginComponent);
+  //   modalRef.componentInstance.name = 'World';
+  // }
+
+  // opensesame() {
+  //   const modalRef = this.modalService.open(SignupComponent);
+  //   modalRef.componentInstance.name = 'World';
+  // }
 // }

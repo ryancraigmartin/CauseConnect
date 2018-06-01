@@ -108,6 +108,8 @@ export class ProfileComponent implements OnInit {
 
   saveProfileInfo() {
     this.showProfileForms = !this.showProfileForms;
+    console.log(this.newEntry);
+    // const self = this;
     this.profileService.postEntries(this.newEntry)
       .subscribe(() => {
         this.myRouter.navigate(['/profile']);

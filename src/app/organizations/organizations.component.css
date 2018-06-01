@@ -1,0 +1,13 @@
+.section-space {
+  padding: 50px 0 0px 0;
+}
+
+/* .center{
+  height: 350px;
+  width: 157px;
+} */
+.img-sizing {
+  width:350px;
+  height: 157px;
+  padding-bottom:20px;
+}

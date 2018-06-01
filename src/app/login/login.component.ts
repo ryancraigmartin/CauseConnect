@@ -1,18 +1,20 @@
-import { Component, OnInit } from "@angular/core";
-import { Observable } from "rxjs/Observable";
-import { AuthService } from "../services/auth.service"; // Session Service
-import { Router } from "@angular/router";
-import "rxjs/add/operator/toPromise";
+import { Component, OnInit } from '@angular/core';
+import { Observable } from 'rxjs/Observable';
+import { AuthService } from '../services/auth.service'; // Session Service
+import { Router } from '@angular/router';
+import 'rxjs/add/operator/toPromise';
+
 
 @Component({
-  selector: "app-login",
-  templateUrl: "./login.component.html",
-  styleUrls: ["./login.component.css"]
+  selector: 'app-login',
+  templateUrl: './login.component.html',
+  styleUrls: ['./login.component.css'],
+  // directives: [ROUTER_DIRECTIVES, Modal]
 })
 export class LoginComponent implements OnInit {
   formInfo = {
-    username: "",
-    password: ""
+    username: '',
+    password: ''
   };
 
   user: any;
@@ -84,11 +86,6 @@ export class LoginComponent implements OnInit {
   }
 
   loginRedirectToProfile() {
-    this.myRouter.navigateByUrl('/profile');
+      this.myRouter.navigateByUrl('/profile');
   }
-  // getPrivateData() {
-  //   this.myService.getPrivateData()
-  //   .subscribe(() => console.log('====================', JSON.parse(this.myService.currentUser._body).username),
-  //   err => console.log(err));
-  // }
 }

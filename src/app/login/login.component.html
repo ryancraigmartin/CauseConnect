@@ -1,5 +1,5 @@
-<div class="example">
-  <div class="box transparent-modal modal-content">
+<div class="example" style="height: 80vh">
+  <div class="box transparent-modal modal-content" id="mymodal">
     <div id="header">
       <div id="cont-lock">
         <i class="material-icons lock fas fa-lock-open"></i>
@@ -21,7 +21,8 @@
           <label>Password</label>
         </div>
         <button (click)="login()" class="btn btn-success">Log In</button>
-        <button id="buttonlogintoregister" type="" (click)="loginRedirectToProfile()" class="btn btn-primary">Sign Up</button>
+        <!-- <button id="buttonlogintoregister" type="submit" (click)="loginRedirectToProfile()" class="btn btn-primary">Sign Up</button> -->
+        <button id="buttonlogintoregister" type="submit" [routerLink]="['/signup']" class="btn btn-primary">Sign Up</button>
       </div>
     </form>
 
@@ -31,7 +32,4 @@
       </p>
     </div>
   </div>
-
 </div>
-
-<p class="error"> {{ error }} </p>
