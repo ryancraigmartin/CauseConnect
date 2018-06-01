@@ -16,11 +16,12 @@ import { FooterComponent } from './footer/footer.component';
 import { NonProfitsComponent } from './non-profits/non-profits.component';
 import { AuthService } from './services/auth.service';
 import { OrganizationsComponent } from './organizations/organizations.component';
+import { OrganizationDetailsComponent } from './organization-details/organization-details.component';
 import { UserProfilesService } from './services/userprofiles.service';
-// import { ModalComponent } from './modal/modal.component';
 import { NgbModule, NgbModal, NgbActiveModal } from '@ng-bootstrap/ng-bootstrap';
 import { EventsComponent } from './events/events.component';
 import { EventDetailsComponent } from './event-details/event-details.component';
+// import { ModalComponent } from './modal/modal.component';
 
 const routes: Routes = [
   {
@@ -68,6 +69,11 @@ const routes: Routes = [
     path: 'organizations',
     component: OrganizationsComponent
   },
+  {
+    path: 'organization-details',
+    component: OrganizationDetailsComponent
+
+  },
   { // 404 route.
     path: '**', // Wildcard. Captures anything that isn't a valid route.
     component: NotFoundComponent
@@ -86,7 +92,8 @@ const routes: Routes = [
     NonProfitsComponent,
     EventsComponent,
     EventDetailsComponent,
-    OrganizationsComponent
+    OrganizationsComponent,
+    OrganizationDetailsComponent
     // ModalComponent,
   ],
 
