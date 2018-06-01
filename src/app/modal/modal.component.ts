@@ -3,7 +3,7 @@ import { Component, Input } from '@angular/core';
 import { NgbModal, NgbActiveModal } from '@ng-bootstrap/ng-bootstrap';
 
 import { LoginComponent } from '../login/login.component';
-import { SignupComponent } from "../signup/signup.component";
+// import { SignupComponent } from '../signup/signup.component';
 
 // @Component({
 //   selector: 'modal-content',

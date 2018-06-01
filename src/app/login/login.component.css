@@ -8,12 +8,12 @@ html {
 .box {
   position: relative;
   margin: auto;
-  height: 410px;
-  top: 40px;
+  height: 100%;
+  top: 0px;
   left: 0;
   z-index: 200;
   right: 0;
-  width: 400px;
+  width: 100%;
   color: #666;
   border-radius: 3px;
   background: #fff;
@@ -125,9 +125,9 @@ html {
 }
 
 .group {
+  margin-left: 8.5em;
   position: relative;
   margin-bottom: 35px;
-  margin-left: 40px;
 }
 
 .inputMaterial {
