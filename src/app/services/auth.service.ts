@@ -37,7 +37,7 @@ export class AuthService {
   }
 
   logout() {
-    return this.http.delete(`http://localhost:3000/api/logout`, {withCredentials: true})
+    return this.http.post(`http://localhost:3000/api/logout`, {withCredentials: true})
       .map(res => res.json())
       .catch(this.handleError);
   }

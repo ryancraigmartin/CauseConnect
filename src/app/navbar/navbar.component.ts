@@ -3,6 +3,7 @@ import { Observable } from 'rxjs/Observable';
 import { AuthService } from '../services/auth.service'; // Session Service
 import { Router } from '@angular/router';
 import 'rxjs/add/operator/toPromise';
+import { LoginComponent } from '../login/login.component';
 
 @Component({
   selector: 'app-navbar',

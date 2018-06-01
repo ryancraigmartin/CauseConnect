@@ -19,6 +19,8 @@ import { AuthService } from './services/auth.service';
 import { UserProfilesService } from './services/userprofiles.service';
 import { ModalComponent } from './modal/modal.component';
 import { NgbModule, NgbModal, NgbActiveModal } from '@ng-bootstrap/ng-bootstrap';
+import { EventsComponent } from './events/events.component';
+import { EventDetailsComponent } from './event-details/event-details.component';
 
 const routes: Routes = [
   {
@@ -26,27 +28,43 @@ const routes: Routes = [
     redirectTo: 'home',
     pathMatch: 'full'
   },
-  { // Homepage route.
+  {
+    // Homepage route.
     path: 'home',
     component: HomeComponent
   },
-  { // Login route.
+  {
+    // Login route.
     path: 'login',
     component: LoginComponent
   },
-  { // Signup route.
+  {
+    // Signup route.
     path: 'signup',
     component: SignupComponent
   },
-  { // User Profile route.
+  {
+    // User Profile route.
     path: 'profile',
     component: ProfileComponent
   },
-  { // login route.
+  {
+    // login route.
     path: 'modal',
     component: ModalComponent
   },
-  { // 404 route.
+  {
+    // events listings route.
+    path: 'events',
+    component: EventsComponent
+  },
+  {
+    // event details route.
+    path: 'eventdetails',
+    component: EventDetailsComponent
+  },
+  {
+    // 404 route.
     path: '**', // Wildcard. Captures anything that isn't a valid route.
     component: NotFoundComponent
   }
@@ -62,7 +80,9 @@ const routes: Routes = [
     NavbarComponent,
     FooterComponent,
     ModalComponent,
-    NonProfitsComponent
+    NonProfitsComponent,
+    EventsComponent,
+    EventDetailsComponent
   ],
 
   imports: [
