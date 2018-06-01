@@ -64,7 +64,6 @@ export class ProfileComponent implements OnInit {
   entries: any[] = [];
 
   // const nameControl = new FormControl('profileEntries.name');
-
   constructor(
     private myService: AuthService,
     private myRouter: Router,
@@ -108,8 +107,6 @@ export class ProfileComponent implements OnInit {
 
   saveProfileInfo() {
     this.showProfileForms = !this.showProfileForms;
-    console.log(this.newEntry);
-    // const self = this;
     this.profileService.postEntries(this.newEntry)
       .subscribe(() => {
         this.myRouter.navigate(['/profile']);
@@ -117,4 +114,3 @@ export class ProfileComponent implements OnInit {
   }
 
 }
-
