@@ -1,5 +1,10 @@
-#input-spacing{
+#input-spacing {
   margin-top: 20px;
+}
+
+.button-spacing {
+  margin-left: 50px;
+  width: 100px;
 }
 
 .switch {
@@ -64,9 +69,9 @@ body {
   font-family: "Open Sans", sans-serif;
 }
 
-.fb-profile img.cover-photo {
+.cover-photo {
   z-index: 0;
-  width: 100%;
+  width: 1530px;
   margin-bottom: 10px;
 }
 
@@ -76,16 +81,22 @@ body {
   width: 20%;
 }
 
-/***
-   Bootstrap Line Tabs by @keenthemes
-   A component of Metronic Theme - #1 Selling Bootstrap 3 Admin Theme in Themeforest: http://j.mp/metronictheme
-   Licensed under MIT
-   ***/
+/* **
+  Bootstrap Line Tabs by @keenthemes
+  A component of Metronic Theme - #1 Selling Bootstrap 3 Admin Theme in Themeforest: http://j.mp/metronictheme
+  Licensed under MIT
+*/
+
+.tab-pane {
+  margin-top: 20px;
+  margin-left: 40px;
+}
 
 /* Tabs panel */
 .tabbable-panel {
-  border: 1px solid #eee;
+  border: 2px solid #737373;
   padding: 10px;
+  margin-bottom: 20px;
 }
 
 /* Default mode */
@@ -137,7 +148,7 @@ body {
   margin-top: -3px;
   background-color: #fff;
   border: 0;
-  border-top: 1px solid #eee;
+  border-top: 1px solid rgb(207, 207, 207);
   padding: 15px 0;
 }
 .portlet .tabbable-line > .tab-content {
@@ -185,6 +196,4 @@ body {
     z-index: 9;
     width: 20%;
   }
-
-
 }

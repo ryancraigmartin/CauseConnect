@@ -9,8 +9,7 @@ import { Profile } from 'selenium-webdriver/firefox';
 
 @Injectable()
 export class UserProfilesService {
-
-  constructor(private http: Http) { }
+  constructor(private http: Http) {}
 
   currentUser: any;
 
@@ -29,15 +28,16 @@ export class UserProfilesService {
   // }
 
   getEntries(theUserID) {
-    return this.http.get('http://localhost:3000/profile/userinfo/' + theUserID, { withCredentials: true })
-      .map((responseFromApi) => responseFromApi.json());
+    return this.http
+      .get('http://localhost:3000/profile/userinfo/' + theUserID, {
+        withCredentials: true
+      })
+      .map(responseFromApi => responseFromApi.json());
   }
 
   postEntries(entryFields: ProfileInfo) {
-    return this.http.post(
-      'http://localhost:3000/profile/edit/',
-      entryFields,
-      { withCredentials: true }
-    );
+    return this.http.post('http://localhost:3000/profile/edit/', entryFields, {
+      withCredentials: true
+    });
   }
 }

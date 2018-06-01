@@ -6,10 +6,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./non-profits.component.css']
 })
 export class NonProfitsComponent implements OnInit {
+  constructor() {}
 
-  constructor() { }
-
-  ngOnInit() {
-  }
-
+  ngOnInit() {}
 }

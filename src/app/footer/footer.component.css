@@ -3,7 +3,7 @@
 }
 
 #myFooter {
-	background-color: #679289;
+	background-color: #1D7874;
     color:white;
 }
 
@@ -34,13 +34,14 @@
 }
 
 #myFooter a{
+	font-size: 14px;
 	color:#d2d1d1;
 	text-decoration: none;
 }
 
 #myFooter a:hover, #myFooter a:focus{
 	text-decoration: none;
-	color:#1d7874;
+	color:#F4C095;
 }
 
 #myFooter .myCols{

@@ -9,7 +9,7 @@ export interface ProfileInfo {
         twitter: String;
         // gender: String;
         volunteerExperience: String;
-        // causes: String;
+        causes: String;
         skills: String;
         // profileImage: String;
         // backgroundImage: String;

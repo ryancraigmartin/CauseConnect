@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Observable } from 'rxjs/Observable';
 import { AuthService } from '../services/auth.service';
 import { ActivatedRoute } from '@angular/router';
+import { map } from 'rxjs/operators';
 
 @Component({
   selector: 'app-home',
@@ -10,29 +11,30 @@ import { ActivatedRoute } from '@angular/router';
 })
 export class HomeComponent implements OnInit {
 
-  constructor(private myService: AuthService) {}
+  constructor(private myService: AuthService) { }
 
   formInfo: any = {
     username: '',
     password: ''
   };
 
-user: any;
-error: any;
+  user: any;
+  error: any;
 
-login() {
-  console.log(this.formInfo);
-  this.myService.login(this.formInfo)
-    .subscribe(
-      (user) => { this.user = user;
-        console.log(this.user);
-      },
-      (err) => this.error = err
-    );
-}
+  login() {
+    console.log(this.formInfo);
+    this.myService.login(this.formInfo)
+      .subscribe(
+        (user) => {
+        this.user = user;
+          console.log(this.user);
+        },
+        (err) => this.error = err
+      );
+  }
 
-ngOnInit() {
+  ngOnInit() {
 
-}
+  }
 
 }

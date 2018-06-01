@@ -1,25 +1,32 @@
-<h2> Signup for CauseConnect </h2>
-<form>
-  <div>
-    <div class="form-group">
-      <label for="email">Email Address: </label>
-      <input class="form-control" type="email" [(ngModel)]="formInfo.email" name="email" placeholder="jsmith@email.com">
-    </div>
-      <div class="form-group">
-          <label for="username">Username: </label>
-          <input class="form-control" type="text" [(ngModel)]="formInfo.username" name="username" placeholder="John Smith">
+<div class="example">
+    <div class="box transparent-modal modal-content">
+      <div id="header">
+        <div id="cont-lock">
+          <i class="material-icons lock fas fa-lock-open"></i>
+        </div>
+        <div id="bottom-head">
+          <h1 class="signupregister">Sign Up for CauseConnect</h1>
+        </div>
       </div>
-    <div class="form-group">
-      <label for="password">Password: </label>
-      <input class="form-control" type="password" [(ngModel)]="formInfo.password" name="password">
-    </div>
-
-    <button type="submit" (click)="signup()" class="btn btn-primary">Sign Up</button>
+      <form>
+        <div>
+          <div class="group">
+            <input type="text" class="inputMaterial" [(ngModel)]="formInfo.email" name="email" placeholder="jsmith@email.com">
+            <label for="email">Email Address: </label>
+          </div>
+          <div class="group">
+            <input type="text" class="inputMaterial"  [(ngModel)]="formInfo.username" name="username" placeholder="John Smith">
+            <label for="username">Username: </label>
+          </div>
+          <div class="group">
+            <input type="password" class="inputMaterial" [(ngModel)]="formInfo.password" name="password" id="login_password" placeholder="Password">
+            <span class="highlight"></span>
+            <span class="bar"></span>
+            <label>Password</label>
+          </div>
+          <!-- <button (click)="login()" class="btn btn-success">Log In</button> -->
+          <button id="buttonlogintoregister" type="submit" (click)="signup()" class="btn btn-primary">Sign Up</button>
+        </div>
+      </form>
   </div>
-</form>
-
-
-<a [routerLink]="['/login']"> login </a>
-<a [routerLink]="['/signup']"> signup </a>
-<a [routerLink]="['/profile']"> profile </a>
-<a [routerLink]="['']"> home </a>
+  <p class="error"> {{ error }} </p>
