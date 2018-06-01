@@ -41,7 +41,7 @@ $(document).on("ready", function () {
 			success: function (data) {
 				//var ms = data['msg'];
 				if (data["result"] != "success") {
-					$("#FailureMsg").html("Mail not send, Something went Wrong!");
+					$("#FailureMsg").html("Email not sent. Something went wrong!");
 					$("#FailureMsg")
 						.show()
 						.css("display", "block");
@@ -50,7 +50,7 @@ $(document).on("ready", function () {
 						.fadeOut();
 				} else {
 					$("#" + FormID)[0].reset();
-					$("#SuccessMsg").html("Email Subscription Successfull!");
+					$("#SuccessMsg").html("Email subscription successfull!");
 					$("#SuccessMsg")
 						.show()
 						.css("display", "block");

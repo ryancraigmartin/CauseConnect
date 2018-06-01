@@ -3,7 +3,7 @@ import { Observable } from 'rxjs/Observable';
 import { AuthService } from '../services/auth.service'; // Session Service
 import { Router } from '@angular/router';
 import 'rxjs/add/operator/toPromise';
-import {ActivatedRoute} from '@angular/router';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-not-found',
@@ -11,7 +11,6 @@ import {ActivatedRoute} from '@angular/router';
   styleUrls: ['./not-found.component.css']
 })
 export class NotFoundComponent implements OnInit {
-
   formInfo: any = {
     username: '',
     password: '',
@@ -32,5 +31,4 @@ export class NotFoundComponent implements OnInit {
     //   this.myRouter.navigate(['/login']);
     // });
   }
-
 }

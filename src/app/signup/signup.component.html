@@ -5,10 +5,10 @@
       <label for="email">Email Address: </label>
       <input class="form-control" type="email" [(ngModel)]="formInfo.email" name="email" placeholder="jsmith@email.com">
     </div>
-      <div class="form-group">
-          <label for="username">Username: </label>
-          <input class="form-control" type="text" [(ngModel)]="formInfo.username" name="username" placeholder="John Smith">
-      </div>
+    <div class="form-group">
+      <label for="username">Username: </label>
+      <input class="form-control" type="text" [(ngModel)]="formInfo.username" name="username" placeholder="John Smith">
+    </div>
     <div class="form-group">
       <label for="password">Password: </label>
       <input class="form-control" type="password" [(ngModel)]="formInfo.password" name="password">
@@ -17,9 +17,3 @@
     <button type="submit" (click)="signup()" class="btn btn-primary">Sign Up</button>
   </div>
 </form>
-
-
-<a [routerLink]="['/login']"> login </a>
-<a [routerLink]="['/signup']"> signup </a>
-<a [routerLink]="['/profile']"> profile </a>
-<a [routerLink]="['']"> home </a>

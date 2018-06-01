@@ -369,22 +369,28 @@ iframe {
 /*========================================== HEADER ===========================================*/
 
 .header-bgimage {
-    background-image: url("../assets/images/header_bgimage.jpg");
+    /* background-image: url("../assets/images/header_bgimage.jpg"); */
 }
+
 .header-section-space {
-    padding: 220px 0 220px 0;
+    /* padding: 220px 0 220px 0; */
 }
+
 .header_common .heading-bottom {
     margin-bottom: 20px;
 }
+
 .header-btn {
+    margin-top: 25px;
     background-color: #679289;
     color: #f3f3f3;
 }
+
 .header-btn:hover {
     color: ##ee2e31;
     background-color: #f4c095;
 }
+
 /*========================================== HEADER ===========================================*/
 /*========================================== HEADER-SLIDER START ===========================================*/
 /*=========== HEADER-SLIDER-ONE-BGIMAGE =================*/

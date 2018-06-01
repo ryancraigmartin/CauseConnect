@@ -1,11 +1,11 @@
 <div class="container-fluid">
   <div class="row">
     <div class="profile-images">
-      <img align="left" class="cover-photo" src="https://storage.googleapis.com/proudcity/deleontx/uploads/2016/12/preview-wattpad-cover-maker-thumbnail.jpg"
+      <img align="left" class="cover-photo img-fluid" src="http://swopbehindbars.org/wp-content/uploads/2018/01/volunteer-hands_0.png"
         alt="Cover Photo" width="2000" height="500" />
-      <img align="left" class="profile-image thumbnail" src="https://loremflickr.com/320/240" alt="Profile Photo" />
+      <img align="left" class="profile-image thumbnail" src="https://picsum.photos/458/354?image=0" alt="Profile Photo" />
       <div class="profile-username">
-        <h1>{{ formInfo.username }}</h1>
+        <h1>{{ profileEntries.name }}</h1>
       </div>
     </div>
   </div>
@@ -20,10 +20,7 @@
             <div class="tabbable-line">
               <ul class="nav nav-tabs ">
                 <li class="active">
-                  <a data-toggle="tab">
-                    About
-                    <b> {{ formInfo.username }}</b>
-                  </a>
+                  <h3 data-toggle="tab">About {{ profileEntries.name }}</h3>
                 </li>
               </ul>
               <div class="tab-content">
@@ -42,17 +39,16 @@
                       </div>
                     </div> -->
                   <h4 id="input-spacing">Background </h4>
-                  <textarea id="aboutUser-text" [(ngModel)]="newEntry.aboutUser" name="aboutUser" rows="4" cols="65" value="profileEntries.aboutUser"></textarea>
+                  <textarea id="aboutUser-text" [(ngModel)]="newEntry.aboutUser" name="aboutUser" rows="4" cols="65"></textarea>
+                  <h4 id="input-spacing">Causes I Support</h4>
+                  <textarea id="causes-text" [(ngModel)]="newEntry.causes" name="causes" rows="4" cols="65"></textarea>
                   <h4 id="input-spacing">Volunteer Experience</h4>
                   <textarea id="volunteerExperience-text" [(ngModel)]="newEntry.volunteerExperience" name="volunteerExperience" rows="4" cols="65"
                     value="profileEntries.volunteerExperience"></textarea>
                   <h4 id="input-spacing">Skills</h4>
-                  <input id="skills-text" [(ngModel)]="newEntry.skills" name="skills">
-                  <h4 id="input-spacing">Causes</h4>
-                  <span class="causes-buttons">
-                    <br>
-                  </span>
-
+                  <textarea id="skills-text" [(ngModel)]="newEntry.skills" name="skills" rows="4" cols="65"></textarea>
+                  <br>
+                  <br>
                   <!-- 
                   <div>
                     <label class="switch">Community
@@ -78,8 +74,8 @@
                           </label>
                         </div> -->
                   <br>
-                  <button type="submit" (ngSubmit)="saveProfileInfo()" class="btn btn-danger">Submit</button>
-                  <button type="submit" (click)="editMode()" class="btn btn-primary">Return</button>
+                  <button type="submit" (ngSubmit)="saveProfileInfo()" class="btn btn-danger button-spacing">Submit</button>
+                  <button type="submit" (click)="editMode()" class="btn btn-primary button-spacing">Return</button>
                   <!-- <button type="submit" (click)="logout()" class="btn btn-info">Logout</button> -->
                 </div>
               </div>
@@ -90,19 +86,19 @@
           <div class="row">
             <div data-spy="scroll" class="tabbable-panel">
               <div class="tabbable-line">
-                <div class="menu_title">Contact Info</div>
+                <div class="menu_title"><h3>Contact Info</h3></div>
                 <div class="panel-body">
                   <div class="col-lg-12">
                     <div class="form-group">
-                      <h4 id="input-spacing" for="email">E-mail:</h4>
+                      <h4 id="input-spacing" for="email">E-mail</h4>
                       <input [(ngModel)]="newEntry.email" name="email" value="profileEntries.email">
                     </div>
                     <div class="form-group">
-                      <h4 id="input-spacing" for="phone">Phone Number:</h4>
+                      <h4 id="input-spacing" for="phone">Phone Number</h4>
                       <input [(ngModel)]="newEntry.phone" name="phone" value="profileEntries.email">
                     </div>
                     <div class="form-group">
-                      <h4 id="input-spacing" for="linkedin">Linkedin:</h4>
+                      <h4 id="input-spacing" for="linkedin">Linkedin</h4>
                       <input [(ngModel)]="newEntry.linkedin" name="linkedin" value="profileEntries.linkedin">
                     </div>
                     <div class="form-group">
@@ -139,10 +135,7 @@
             <div class="tabbable-line">
               <ul class="nav nav-tabs ">
                 <li class="active">
-                  <a data-toggle="tab">
-                    About
-                    <b> {{ formInfo.username }}</b>
-                  </a>
+                    <h3 data-toggle="tab">About {{ profileEntries.name }}</h3>
                 </li>
               </ul>
               <div class="tab-content">
@@ -161,15 +154,16 @@
                       </div>
                     </div> -->
                   <h4>Background </h4>
-                  <p id="aboutUser-text" name="aboutUser">{{profileEntries.aboutUser}}</p>
+                    <p id="aboutUser-text" name="aboutUser">{{profileEntries.aboutUser}}</p>
+                  <h4 id="causes-text">Causes I Support</h4>
+                    <p id="causes-text" name="skills">{{profileEntries.causes}}</p>
                   <h4>Volunteer Experience</h4>
-                  <p id="volunteerExperience-text" name="volunteerExperience">{{profileEntries.volunteerExperience}}</p>
+                    <p id="volunteerExperience-text" name="volunteerExperience">{{profileEntries.volunteerExperience}}</p>
                   <h4>Skills</h4>
-                  <p id="skills-text" name="skills">{{profileEntries.skills}}</p>
-                  <h4>Causes</h4>
-                  <span class="causes-buttons">
-                    <br>
-                  </span>
+                    <p id="skills-text" name="skills">{{profileEntries.skills}}</p>
+                  <span class="causes-buttons"></span>
+                  <br>
+                  <br>
 
                   <!-- <div>
                     <label class="switch">Community
@@ -196,10 +190,11 @@
                         </div> -->
 
                   <br>
-                  <button *ngIf="!showProfileForms" type="submit" (click)="editMode()" class="btn btn-primary">Edit</button>
-                  <br><br><br>
-
-                  <div *ngIf="user"><button type="button" (click)="logout()" class="btn btn-info">Logout</button></div>
+                  <button *ngIf="!showProfileForms" type="submit" (click)="editMode()" class="btn btn-primary button-spacing">Edit</button>
+                  <button *ngIf="user" type="button" (click)="logout()" class="btn btn-info button-spacing">Logout</button>
+                  <br>
+                  <br>
+                  <br>
                 </div>
               </div>
             </div>
@@ -209,7 +204,7 @@
           <div class="row">
             <div data-spy="scroll" class="tabbable-panel">
               <div class="tabbable-line">
-                <div class="menu_title">Contact Info</div>
+                <div class="menu_title"><h3>Contact Info</h3></div>
                 <div class="panel-body">
                   <div class="col-lg-12">
                     <div class="form-group">
@@ -241,4 +236,4 @@
       </div>
     </div>
   </form>
-<!-- END Populated profile info -->
+  <!-- END Populated profile info -->

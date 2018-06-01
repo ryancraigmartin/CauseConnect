@@ -29,7 +29,8 @@ export class ProfileComponent implements OnInit {
     linkedin: '',
     twitter: '',
     volunteerExperience: '',
-    skills: ''
+    skills: '',
+    causes: ''
     //   profileImage: '',
     //   backgroundImage: '',
   };
@@ -44,7 +45,8 @@ export class ProfileComponent implements OnInit {
     linkedin: '',
     twitter: '',
     volunteerExperience: '',
-    skills: ''
+    skills: '',
+    causes: ''
     //   profileImage: '',
     //   backgroundImage: '',
   };

@@ -5,7 +5,6 @@ import { RouterModule, Routes } from '@angular/router';
 import { HttpModule } from '@angular/http';
 import { AngularFontAwesomeModule } from 'angular-font-awesome';
 
-
 import { AppComponent } from './app.component';
 import { HomeComponent } from './home/home.component';
 import { LoginComponent } from './login/login.component';
@@ -17,7 +16,7 @@ import { FooterComponent } from './footer/footer.component';
 import { NonProfitsComponent } from './non-profits/non-profits.component';
 import { AuthService } from './services/auth.service';
 import { UserProfilesService } from './services/userprofiles.service';
-import { ModalComponent } from './modal/modal.component';
+// import { ModalComponent } from './modal/modal.component';
 import { NgbModule, NgbModal, NgbActiveModal } from '@ng-bootstrap/ng-bootstrap';
 
 const routes: Routes = [
@@ -26,27 +25,33 @@ const routes: Routes = [
     redirectTo: 'home',
     pathMatch: 'full'
   },
-  { // Homepage route.
+  {
+    // Homepage route.
     path: 'home',
     component: HomeComponent
   },
-  { // Login route.
+  {
+    // Login route.
     path: 'login',
     component: LoginComponent
   },
-  { // Signup route.
+  {
+    // Signup route.
     path: 'signup',
     component: SignupComponent
   },
-  { // User Profile route.
+  {
+    // User Profile route.
     path: 'profile',
     component: ProfileComponent
   },
-  { // login route.
-    path: 'modal',
-    component: ModalComponent
-  },
-  { // 404 route.
+  // {
+  //   // login route.
+  //   path: 'modal',
+  //   component: ModalComponent
+  // },
+  {
+    // 404 route.
     path: '**', // Wildcard. Captures anything that isn't a valid route.
     component: NotFoundComponent
   }
@@ -61,8 +66,8 @@ const routes: Routes = [
     NotFoundComponent,
     NavbarComponent,
     FooterComponent,
-    ModalComponent,
     NonProfitsComponent
+    // ModalComponent,
   ],
 
   imports: [
@@ -73,8 +78,9 @@ const routes: Routes = [
     RouterModule.forRoot(routes),
     NgbModule.forRoot()
   ],
-  entryComponents: [ModalComponent],
+  // entryComponents: [ModalComponent],
   providers: [AuthService, UserProfilesService], // Services go here.
-  bootstrap: [AppComponent, ModalComponent]
+  bootstrap: [AppComponent]
+  // bootstrap: [AppComponent, ModalComponent]
 })
 export class AppModule {}
