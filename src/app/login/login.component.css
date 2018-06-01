@@ -125,9 +125,17 @@ html {
 }
 
 .group {
-  margin-left: 8.5em;
+  /* margin-left: 8.5em; */
+    margin-left: 38%;
   position: relative;
   margin-bottom: 35px;
+}
+
+#logintoregister {
+  /* margin-left: 8.5em; */
+    margin-left: 38%;
+  /* position: relative;
+  margin-bottom: 35px; */
 }
 
 .inputMaterial {

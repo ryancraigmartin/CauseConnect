@@ -65,8 +65,7 @@ const routes: Routes = [
     component: EventDetailsComponent
   },
   {
-    // 404 route.
-  { // organizations route.
+ // organizations route.
     path: 'organizations',
     component: OrganizationsComponent
   },
@@ -88,7 +87,7 @@ const routes: Routes = [
     ModalComponent,
     NonProfitsComponent,
     EventsComponent,
-    EventDetailsComponent
+    EventDetailsComponent,
     OrganizationsComponent
   ],
 

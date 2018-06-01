@@ -41,8 +41,8 @@ export class ModalComponent {
     modalRef.componentInstance.name = 'World';
   }
 
-  opensesame() {
-    const modalRef = this.modalService.open(SignupComponent);
-    modalRef.componentInstance.name = 'World';
-  }
+  // opensesame() {
+  //   const modalRef = this.modalService.open(SignupComponent);
+  //   modalRef.componentInstance.name = 'World';
+  // }
 }

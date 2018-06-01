@@ -32,7 +32,7 @@ export class SignupComponent implements OnInit {
       this.user = user;
       console.log("Inside subscribe!");
       console.log(this.formInfo);
-      this.myRouter.navigate(["/login"]);
+      this.myRouter.navigate(["/profile"]);
     }, err => (this.error = err));
   }
 

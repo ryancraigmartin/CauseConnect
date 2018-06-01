@@ -124,10 +124,24 @@ html {
   margin-top: 15px;
 }
 
-.group {
+/* .group {
   position: relative;
   margin-bottom: 35px;
   margin-left: 40px;
+} */
+
+.group {
+  /* margin-left: 8.5em; */
+    margin-left: 24%;
+  position: relative;
+  margin-bottom: 35px;
+}
+
+#logintoregister {
+  /* margin-left: 8.5em; */
+    margin-left: 24%;
+  /* position: relative;
+  margin-bottom: 35px; */
 }
 
 .inputMaterial {
