@@ -1,0 +1,23 @@
+/* img{
+  padding-bottom: 40px;
+} */
+.image-bottom {
+  margin: 0 0 70px 0;
+  width:100%;
+}
+
+.center {
+  text-align:center;
+}
+
+
+.section-bg-2 {
+  background-color: #FFF;
+}
+.image-center {
+  margin: 0 auto;
+  background-color: #000;
+}
+p{
+  color:#1D7874;
+}
