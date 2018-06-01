@@ -3,6 +3,7 @@ import { Component, Input } from '@angular/core';
 import { NgbModal, NgbActiveModal } from '@ng-bootstrap/ng-bootstrap';
 
 import { LoginComponent } from '../login/login.component';
+// import { SignupComponent } from '../signup/signup.component';
 
 // @Component({
 //   selector: 'modal-content',
@@ -28,7 +29,7 @@ import { LoginComponent } from '../login/login.component';
 // }
 
 @Component({
-  selector: 'modal-component',
+  selector: 'app-modal-component',
   templateUrl: 'modal.component.html'
 })
 
@@ -39,4 +40,9 @@ export class ModalComponent {
     const modalRef = this.modalService.open(LoginComponent);
     modalRef.componentInstance.name = 'World';
   }
+
+  // opensesame() {
+  //   const modalRef = this.modalService.open(SignupComponent);
+  //   modalRef.componentInstance.name = 'World';
+  // }
 }

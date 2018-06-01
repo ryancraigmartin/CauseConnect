@@ -1,10 +1,4 @@
-<div>   
-    <h1>Welcome to CauseConnect!</h1>
-    <a [routerLink]="['/login']"> login </a>
-    <a [routerLink]="['/signup']"> signup </a>
-    <a [routerLink]="['/profile']"> profile </a>
-    <a [routerLink]="['/']"> home </a>
-</div>
+
 
 <!-- <body data-spy="scroll" data-offset="75"> -->
 
@@ -966,16 +960,23 @@
                 <!--=============== COLUMN-1 ==================-->
                 <div class="col-md-6 events-res-common-bottom">
                     <div class="left image-bottom">
-                        <img src="../assets/images/750x400.jpg" alt="image" class="img-responsive image-center" />
+                        <img src="../assets/images/eventimage_01.jpg" alt="image" class="img-responsive image-center" />
                     </div>
                     <h3 class="left sub-heading-bottom">
-                        <a href="#">CHILD EDUCATION IN AFRICA</a>
+                        <a [routerLink]="['/eventdetails']">TEACH CHILDREN TO PAINT</a>
                     </h3>
-                    <p class="left intro ls">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam pharetra efficitur diam, vel sagittis ipsum</p>
-                    <p class="left">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam pharetra efficitur diam, vel sagittis ipsum.
-                        Curabitur eleifend, risus id sollicitudin pretium, massa ex tristique velit, ullamcorper feugiat
-                        dui tellus in quam.</p>
+                    <p class="left intro ls">In our ongoing commitment to give back to our local communities, Painting with a Twist® proudly sponsors a monthly fund raising
+                    events – Painting with a Purpose. Proceeds from Painting with a Purpose events are donated to local non-profit organizations.
+                    Painting with a Twist has donated over 4 million dollars to local non-profit organizations such as Habitat for Humanity,
+                    Multiple Sclerosis and Odyssey House. We are committed to giving back to the local community, one painting at at time.</p>
+                <a [routerLink]="['/eventdetails']">
+                    <div class="common-btn header-btn">Join This Event</div>
+                </a>
+                
                 </div>
+                
+                   
+              
 
                 <!--=============== COLUMN-2 ==================-->
                 <div class="col-md-6">
@@ -994,24 +995,29 @@
                                 <div class="row">
                                     <div class="col-md-5 col-sm-5">
                                         <div class="left res-image-bottom-1">
-                                            <img src="../assets/images/400x270x1.jpg" alt="image" class="img-responsive" />
+                                            <img src="../assets/images/eventimage_02.jpg" alt="image" class="img-responsive" />
                                         </div>
                                     </div>
 
                                     <div class="col-md-7 col-sm-7">
                                         <h3 class="left sub-heading-bottom">
-                                            <a href="#">WORLD PEACE</a>
+                                            <a [routerLink]="['/eventdetails']">TEEN RAVE</a>
                                         </h3>
                                         <p class="left date ls distab-cell-middle date-right">
-                                            <a href="#">
+                                            <a [routerLink]="['/eventdetails']">
                                                 <i class="fa fa-calendar" aria-hidden="true"></i>Mar 13, 2017</a>
                                         </p>
                                         <p class="left date ls distab-cell-middle">
-                                            <a href="#">
+                                            <a [routerLink]="['/eventdetails']">
                                                 <i class="fa fa-clock-o" aria-hidden="true"></i>09:00 AM - 11:00 AM</a>
                                         </p>
-                                        <p class="left">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam pharetra efficitur diam,
-                                            vel sagittis ipsum. Curabitur eleifend</p>
+                                        <p class="left">Junior high and high students, along with their parents can enjoy a DJ and a night of fun with their peers, all under one
+                                        roof!</p>
+                                        <div class="left btn-top-1">
+                                            <a [routerLink]="['/eventdetails']">
+                                                <div class="common-btn header-btn">Join This Event</div>
+                                            </a>
+                                        </div>
                                     </div>
                                 </div>
                             </li>
@@ -1021,24 +1027,29 @@
                                 <div class="row">
                                     <div class="col-md-5 col-sm-5">
                                         <div class="left res-image-bottom-1">
-                                            <img src="../assets/images/400x270x2.jpg" alt="image" class="img-responsive" />
+                                            <img src="../assets/images/eventimage_03.jpg" alt="image" class="img-responsive" />
                                         </div>
                                     </div>
 
                                     <div class="col-md-7 col-sm-7">
                                         <h3 class="left sub-heading-bottom">
-                                            <a href="#">SAVE WATER</a>
+                                            <a [routerLink]="['/eventdetails']">TREE PLANTING AT MARKHAM PARK</a>
                                         </h3>
                                         <p class="left date ls distab-cell-middle date-right">
-                                            <a href="#">
+                                            <a [routerLink]="['/eventdetails']">
                                                 <i class="fa fa-calendar" aria-hidden="true"></i>Mar 13, 2017</a>
                                         </p>
                                         <p class="left date ls distab-cell-middle">
-                                            <a href="#">
+                                            <a [routerLink]="['/eventdetails']">
                                                 <i class="fa fa-clock-o" aria-hidden="true"></i>09:00 AM - 11:00 AM</a>
                                         </p>
-                                        <p class="left">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam pharetra efficitur diam,
-                                            vel sagittis ipsum. Curabitur eleifend</p>
+                                        <p class="left">When the holidays are long gone but your tree isn't, it's time to chip in and donate your used evergreen to our annual Chip-a-Tree
+                                        initiative.</p>
+                                            <div class="left btn-top-1">
+                                                <a [routerLink]="['/eventdetails']">
+                                                    <div class="common-btn header-btn">Join This Event</div>
+                                                </a>
+                                            </div>
                                     </div>
                                 </div>
                             </li>
@@ -1048,24 +1059,29 @@
                                 <div class="row">
                                     <div class="col-md-5 col-sm-5">
                                         <div class="left res-image-bottom-1">
-                                            <img src="../assets/images/400x270x3.jpg" alt="image" class="img-responsive" />
+                                            <img src="../assets/images/eventimage_04.jpg" alt="image" class="img-responsive" />
                                         </div>
                                     </div>
 
                                     <div class="col-md-7 col-sm-7">
                                         <h3 class="left sub-heading-bottom">
-                                            <a href="#">GO GREEN</a>
+                                            <a [routerLink]="['/eventdetails']">SAVE THE CHEETAHS</a>
                                         </h3>
                                         <p class="left date ls distab-cell-middle date-right">
-                                            <a href="#">
+                                            <a [routerLink]="['/eventdetails']">
                                                 <i class="fa fa-calendar" aria-hidden="true"></i>Mar 13, 2017</a>
                                         </p>
                                         <p class="left date ls distab-cell-middle">
-                                            <a href="#">
+                                            <a [routerLink]="['/eventdetails']">
                                                 <i class="fa fa-clock-o" aria-hidden="true"></i>09:00 AM - 11:00 AM</a>
                                         </p>
-                                        <p class="left">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam pharetra efficitur diam,
-                                            vel sagittis ipsum. Curabitur eleifend</p>
+                                        <p class="left">CF supporters and board members Kathy and Jim Snowden, Paul Zemitzsch, and Virginia Busch invite you to a special evening
+                                        of conservation.</p>
+                                            <div class="left btn-top-1">
+                                                <a [routerLink]="['/eventdetails']">
+                                                    <div class="common-btn header-btn">Join This Event</div>
+                                                </a>
+                                            </div>
                                     </div>
                                 </div>
                             </li>
@@ -1075,24 +1091,28 @@
                                 <div class="row">
                                     <div class="col-md-5 col-sm-5">
                                         <div class="left res-image-bottom-1">
-                                            <img src="../assets/images/400x270x4.jpg" alt="image" class="img-responsive" />
+                                            <img src="../assets/images/eventimage_05.jpg" alt="image" class="img-responsive" />
                                         </div>
                                     </div>
 
                                     <div class="col-md-7 col-sm-7">
                                         <h3 class="left sub-heading-bottom">
-                                            <a href="#">EDCUATE TO ALL</a>
+                                            <a [routerLink]="['/eventdetails']">BIG SISTER APPRECIATION DANCE-A-THON</a>
                                         </h3>
                                         <p class="left date ls distab-cell-middle date-right">
-                                            <a href="#">
+                                            <a [routerLink]="['/eventdetails']">
                                                 <i class="fa fa-calendar" aria-hidden="true"></i>Mar 13, 2017</a>
                                         </p>
                                         <p class="left date ls distab-cell-middle">
-                                            <a href="#">
+                                            <a [routerLink]="['/eventdetails']">
                                                 <i class="fa fa-clock-o" aria-hidden="true"></i>09:00 AM - 11:00 AM</a>
                                         </p>
-                                        <p class="left">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam pharetra efficitur diam,
-                                            vel sagittis ipsum. Curabitur eleifend</p>
+                                        <p class="left">hard work culminates with a fabulous night out with live music & spectacular dance performances.</p>
+                                            <div class="left btn-top-1">
+                                                <a [routerLink]="['/eventdetails']">
+                                                    <div class="common-btn header-btn">Join This Event</div>
+                                                </a>
+                                            </div>
                                     </div>
                                 </div>
                             </li>
@@ -1204,4 +1224,5 @@
         </div>
     </section>
     <!--================================= OUR PARTNERS END =============================================-->
+
 

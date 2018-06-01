@@ -42,9 +42,18 @@
 
 @import url('https://fonts.googleapis.com/css?family=Roboto+Condensed:300,300i,400,400i,700,700i" rel="stylesheet');
 @import url('https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i,800,800i');
+html {
+    width: 100%;
+    /* overflow:hidden; */
+    margin: 0 auto;
+}
+
 body {
     font-family: 'Open Sans', Helvathika, Arial, sans-serif;
     font-size: 14px;
+    width: 100%;
+    overflow-x: hidden;
+    margin: 0 auto;
 }
 a {
     outline: none !important;
@@ -283,7 +292,7 @@ iframe {
 
 .menu-underline a::before {
     background: #f3f3f3;
-    background-color: #679289;
+    background-color: #aef5e5;
     bottom: -3px;
     content: "";
     height: 2px;
@@ -795,7 +804,7 @@ iframe {
     margin-left: 5px;
 }
 .events_common .date {
-    font-size: 13px;
+    font-size: 10px;
     font-weight: 600;
     padding-bottom: 10px;
 }
@@ -916,6 +925,18 @@ iframe {
     border-bottom: 1px solid #071E22;
     padding-bottom: 10px;
 }
+
+.navbar-brand {
+    padding: 0 !important; 
+}
+
+.navbar-brand img {
+    height: 22px;
+            margin: 10px;
+}
+
+
+
 /*========================================== FOOTER END ===========================================*/
 
 @media only screen and (min-width: 992px) and (max-width: 1199px) {
@@ -1002,6 +1023,7 @@ iframe {
 		line-height: 32px;
 	}
 }
+
 @media only screen and (min-width: 250px) and (max-width: 479px) {
     .common-full {
         width: 100% !important;
@@ -1018,4 +1040,61 @@ iframe {
     .res-common-bottom-2 {
         padding-bottom: 40px;
     }
+
+    .navbar-brand {
+        position: absolute;
+        left: 1em;
+        top: .3em;
+    }
+
+    .navbar-brand img {
+        height: 22px !important;
+        margin: 10px;
+    }
+
+    .navbar {
+        min-height: 45px !important;
+    }
+
+    .navbar-toggler {
+        position: absolute;
+        right: 1em;
+        top: .9em;
+    }
+
+    .collapse {
+        margin-top: 5em;
+    }
 }
+
+
+/* Underline From Left */
+.hvr-underline-from-left {
+  display: inline-block;
+  vertical-align: middle;
+  -webkit-transform: perspective(1px) translateZ(0);
+  transform: perspective(1px) translateZ(0);
+  box-shadow: 0 0 1px rgba(0, 0, 0, 0);
+  position: relative;
+  overflow: hidden;
+}
+.hvr-underline-from-left:before {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  left: 0;
+  right: 100%;
+  bottom: 0;
+  background: #679289;
+  height: 2px;
+  -webkit-transition-property: right;
+  transition-property: right;
+  -webkit-transition-duration: 0.3s;
+  transition-duration: 0.3s;
+  -webkit-transition-timing-function: ease-out;
+  transition-timing-function: ease-out;
+}
+.hvr-underline-from-left:hover:before, .hvr-underline-from-left:focus:before, .hvr-underline-from-left:active:before {
+  right: 0;
+}
+

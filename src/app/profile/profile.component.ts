@@ -1,9 +1,11 @@
 import { Component, OnInit } from '@angular/core';
 import { Observable } from 'rxjs/Observable';
 import { Router, ActivatedRoute } from '@angular/router';
+import { FormsModule, ReactiveFormsModule, FormControl  } from '@angular/forms';
 import { AuthService } from '../services/auth.service'; // Session Service
 import { UserProfilesService } from '../services/userprofiles.service'; // Profile Service
 import { ProfileInfo } from './../interfaces/profile-info'; // ProfileInfo interface
+
 
 import 'rxjs/add/operator/toPromise';
 
@@ -14,6 +16,9 @@ import 'rxjs/add/operator/toPromise';
 })
 export class ProfileComponent implements OnInit {
 
+  // Shows or hides input fields depending on edit state.
+  showProfileForms: Boolean = false;
+
   // Profile info object to hold retrieved data.
   newEntry: ProfileInfo = {
     name: '',
@@ -23,7 +28,24 @@ export class ProfileComponent implements OnInit {
     phone: '',
     facebook: '',
     linkedin: '',
+    twitter: '',
     volunteerExperience: '',
+    skills: ''
+    //   profileImage: '',
+    //   backgroundImage: '',
+  };
+
+  profileEntries: ProfileInfo = {
+    name: '',
+    aboutUser: '',
+    age: '',
+    email: '',
+    phone: '',
+    facebook: '',
+    linkedin: '',
+    twitter: '',
+    volunteerExperience: '',
+    skills: ''
     //   profileImage: '',
     //   backgroundImage: '',
   };
@@ -40,21 +62,60 @@ export class ProfileComponent implements OnInit {
   // profileInfo: any;
   entries: any[] = [];
 
+  // const nameControl = new FormControl('profileEntries.name');
+
   constructor(
     private myService: AuthService,
     private myRouter: Router,
     private profileService: UserProfilesService,
-    private activatedRoute: ActivatedRoute) { }
+    private activatedRoute: ActivatedRoute) {
+    // console.log( profileService, myRouter );
+    // this.profileService = profileService;
+    // console.log(this.profileService);
+  }
+
+  editMode() {
+    this.showProfileForms = !this.showProfileForms;
+  }
+
+  // toggleSwitch() {
+  //   this.$('.switch').is(':checked');
+    // $('#switch').bootstrapSwitch();
+    // $('#switch').on( 'switchChange',function () {
+    // if ($('#switch').bootstrapSwitch('state') === true) {
+    //     console.log('On');
+    // } else {
+    //     console.log('Off');
+    // }
+    // });
+  // }
+
+  getEntries(theUserID) {
+    console.log('--- Getting the profile info ---');
+    this.profileService.getEntries(theUserID)
+    .subscribe((profileEntries) => {
+      console.log('+++++++++++++');
+      console.log(profileEntries);
+      this.profileEntries = profileEntries[0];
+      if (profileEntries[0]) {
+        this.newEntry = profileEntries[0];
+      }
+
+
+
+    });
+  }
 
   ngOnInit() {
 
 
-    this.profileService.getEntries();
 
     this.myService.isLoggedIn()
-      .toPromise()
-      .then(() => {
-        this.formInfo = this.myService.currentUser;
+    .toPromise()
+    .then(() => {
+      console.log(this.myService.currentUser._id);
+      this.formInfo = this.myService.currentUser;
+      this.getEntries(this.myService.currentUser._id);
         // console.log(this.formInfo); ===== Works !
       })
       .catch(err => {
@@ -76,12 +137,14 @@ export class ProfileComponent implements OnInit {
   }
 
   saveProfileInfo() {
+    this.showProfileForms = !this.showProfileForms;
+    console.log(this.newEntry);
+    // const self = this;
     this.profileService.postEntries(this.newEntry)
       .subscribe(() => {
         this.myRouter.navigate(['profile']);
       });
   }
-
 
 }
 
