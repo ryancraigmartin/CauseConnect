@@ -77,18 +77,6 @@ export class ProfileComponent implements OnInit {
     this.showProfileForms = !this.showProfileForms;
   }
 
-  // toggleSwitch() {
-  //   this.$('.switch').is(':checked');
-    // $('#switch').bootstrapSwitch();
-    // $('#switch').on( 'switchChange',function () {
-    // if ($('#switch').bootstrapSwitch('state') === true) {
-    //     console.log('On');
-    // } else {
-    //     console.log('Off');
-    // }
-    // });
-  // }
-
   getEntries(theUserID) {
     this.profileService.getEntries(theUserID)
     .subscribe((profileEntries) => {
@@ -105,24 +93,11 @@ export class ProfileComponent implements OnInit {
       // console.log(this.myService.currentUser._id);
       this.formInfo = this.myService.currentUser;
       this.getEntries(this.user._id);
-        // console.log(this.formInfo); ===== Works !
-      // })
-      // .catch(err => {
-      //   console.log(err);
-      //   this.myRouter.navigate(['/login']);
-      //   // this.myRouter.navigate(['/login']);
-      // });
   }
 
   logout() {
     this.myService.logout()
     .then(() => {
-        // console.log('!!!!!!!!!!Call to logout!!!!!!!!!!!');
-        // console.log('-------------------------------------');
-        // console.log('currentuser -->', this.myService.currentUser);
-        // this.user = null;
-        // console.log('-------------------------------------');
-        //   console.log('this.user -->', this.user);
           this.formInfo = {};
           this.myRouter.navigate(['/login']);
         })
