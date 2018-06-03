@@ -1,24 +1,24 @@
-import { Component, OnInit } from '@angular/core';
-import { Observable } from 'rxjs/Observable';
-import { AuthService } from '../services/auth.service'; // Session Service
-import { Router } from '@angular/router';
-import 'rxjs/add/operator/toPromise';
-import { ActivatedRoute } from '@angular/router';
+import { Component, OnInit } from "@angular/core";
+import { Observable } from "rxjs/Observable";
+import { AuthService } from "../services/auth.service"; // Session Service
+import { Router } from "@angular/router";
+import "rxjs/add/operator/toPromise";
+import { ActivatedRoute } from "@angular/router";
 
 @Component({
-  selector: 'app-not-found',
-  templateUrl: './not-found.component.html',
-  styleUrls: ['./not-found.component.css']
+  selector: "app-not-found",
+  templateUrl: "./not-found.component.html",
+  styleUrls: ["./not-found.component.css"]
 })
 export class NotFoundComponent implements OnInit {
   formInfo: any = {
-    username: '',
-    password: '',
-    email: ''
+    username: "",
+    password: "",
+    email: ""
   };
   user: any;
 
-  constructor(private myService: AuthService, private myRouter: Router) { }
+  constructor(private myService: AuthService, private myRouter: Router) {}
 
   ngOnInit() {
     // this.myService.isLoggedIn()

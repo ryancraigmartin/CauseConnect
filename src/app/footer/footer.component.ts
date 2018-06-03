@@ -11,9 +11,7 @@ import { ActivatedRoute } from '@angular/router';
   templateUrl: './footer.component.html',
   styleUrls: ['./footer.component.css']
 })
-
 export class FooterComponent implements OnInit {
-
   formInfo: any = {
     username: '',
     password: ''
@@ -23,8 +21,11 @@ export class FooterComponent implements OnInit {
   error: any;
   privateData: any;
 
-  constructor(private myService: AuthService, private activatedRoute: ActivatedRoute, private myRouter: Router) { }
+  constructor(
+    private myService: AuthService,
+    private activatedRoute: ActivatedRoute,
+    private myRouter: Router
+  ) {}
 
-  ngOnInit() {
-  }
+  ngOnInit() {}
 }

@@ -26,7 +26,7 @@ export class HomeComponent implements OnInit {
     this.myService.login(this.formInfo)
       .subscribe(
         (user) => {
-        this.user = user;
+          this.user = user;
           console.log(this.user);
         },
         (err) => this.error = err
