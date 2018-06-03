@@ -2,17 +2,19 @@
 
 CauseConnect aims to solve the disconnect prohibiting organizations from finding willing volunteers by providing a directory of causes, upcoming events, and users. It will function as a "LinkedIN for Volunteers."
 
-Developed by [Brian Jaimes](https://github.com/B-riJ), [Kat Alderman](https://github.com/katalderman) and [Ryan Craig Martin](https://github.com/ryanmartin) in two weeks for the final project of the April-June 2018 Cohort at Ironhack, Miami.
+:trophy: CauseConnect won 2nd Place Overall during the June 2018 Ironhack, Miami Full Stack Web Development Hackshow.
+
+It was developed by [Brian Jaimes](https://github.com/B-riJ), [Kat Alderman](https://github.com/katalderman) and [Ryan Craig Martin](https://github.com/ryanmartin) in two weeks for the final project of the April-June 2018 Cohort at Ironhack, Miami.
 
 [![forthebadge](https://forthebadge.com/images/badges/built-with-love.svg)](https://forthebadge.com)
 
-### Frontend
+## Frontend
 
 - [Angular](https://angular.io/) 
 - [RxJS](http://reactivex.io/)
 - [Bootstrap](https://getbootstrap.com/docs/4.1/)
 
-### Backend
+## Backend
 
 - [express](https://expressjs.com/)
 - [express-session](https://github.com/expressjs/session#express-session)
@@ -25,9 +27,36 @@ Developed by [Brian Jaimes](https://github.com/B-riJ), [Kat Alderman](https://gi
 
 - [Heroku Live Demo](https://causeconnect.herokuapp.com/)
 
-## License
+### License
 
 - [MIT](./LICENSE)
+
+---
+## Getting Started
+
+### Clone or download this repository
+
+```sh
+git clone https://github.com/nonprofitironhackproject/angular.git
+```
+
+&
+
+```sh
+git clone https://github.com/nonprofitironhackproject/express.git
+```
+
+### Install dependencies
+
+```sh
+npm install
+```
+
+or
+
+```sh
+yarn install
+```
 
 ---
 

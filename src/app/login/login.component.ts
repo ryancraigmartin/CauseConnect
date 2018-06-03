@@ -86,6 +86,6 @@ export class LoginComponent implements OnInit {
   }
 
   loginRedirectToProfile() {
-      this.myRouter.navigateByUrl('/profile');
+    this.myRouter.navigateByUrl('/profile');
   }
 }
