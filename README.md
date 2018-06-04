@@ -2,7 +2,7 @@
 
 CauseConnect aims to solve the disconnect prohibiting organizations from finding willing volunteers by providing a directory of causes, upcoming events, and users. It will function as a "LinkedIN for Volunteers."
 
-:trophy: CauseConnect won 2nd Place Overall during the June 2018 Ironhack, Miami Full Stack Web Development Hackshow.
+:trophy: CauseConnect won 2nd Place during the June 2018 Ironhack, Miami Full Stack Web Development Hackshow.
 
 It was developed by [Brian Jaimes](https://github.com/B-riJ), [Kat Alderman](https://github.com/katalderman) and [Ryan Craig Martin](https://github.com/ryanmartin) in two weeks for the final project of the April-June 2018 Cohort at Ironhack, Miami.
 
